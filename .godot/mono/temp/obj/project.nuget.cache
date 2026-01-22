@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "qnsDsWESlp4=",
+  "success": true,
+  "projectFilePath": "E:\\Users\\penan\\Desktop\\Thrive-ver1.0.1\\Thrive.csproj",
+  "expectedPackageFiles": [
+    "E:\\Users\\penan\\.nuget\\packages\\godot.sourcegenerators\\4.4.1\\godot.sourcegenerators.4.4.1.nupkg.sha512",
+    "E:\\Users\\penan\\.nuget\\packages\\godotsharp\\4.4.1\\godotsharp.4.4.1.nupkg.sha512",
+    "E:\\Users\\penan\\.nuget\\packages\\godotsharpeditor\\4.4.1\\godotsharpeditor.4.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

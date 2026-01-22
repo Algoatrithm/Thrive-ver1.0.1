@@ -4,14 +4,6 @@ using Godot;
 
 public partial class Animal : Node2D
 {
-    /*
-            To Do:
-            - Flight Time
-            - Land
-            - Travel
-    
-    */
-
     [Export]
     public float MovementSpeed { get; set; } = 20.0f;
     NavigationAgent2D _navigationAgent;
