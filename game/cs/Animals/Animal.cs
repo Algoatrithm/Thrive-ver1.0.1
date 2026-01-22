@@ -35,7 +35,11 @@ public partial class Animal : Node2D
     private void OnPressed()
     {
         if (IsPossesed)
+        {
+            IsPossesed = false;
+            WorldServer.Instance.ClearObject();
             return;
+        }
         IsPossesed = true;
         WorldServer.Instance.SetObject(this, Commands);
     }

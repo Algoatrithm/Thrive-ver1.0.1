@@ -11,6 +11,9 @@ public partial class WorldServer : Node
     );
 
     [Signal]
+    public delegate void ClearObjectPassedEventHandler();
+
+    [Signal]
     public delegate void EventEventHandler();
     public const string Path_ScreenMessage = "res://game/tscn/popups/screen_message.tscn";
     public static WorldServer Instance { get; private set; }
@@ -39,6 +42,11 @@ public partial class WorldServer : Node
     public void SetObject(Node2D obj, Godot.Collections.Array<Callable> arg1)
     {
         EmitSignal(SignalName.ObjectPassed, obj, arg1);
+    }
+
+    public void ClearObject()
+    {
+        EmitSignal(SignalName.ClearObjectPassed);
     }
 
     // Type Path_ and it should show available paths

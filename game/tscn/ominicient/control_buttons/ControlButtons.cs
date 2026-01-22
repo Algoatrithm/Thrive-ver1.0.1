@@ -17,4 +17,14 @@ public partial class ControlButtons : HBoxContainer
             AddChild(Commands[i]);
         }
     }
+
+    public void ClearCommands()
+    {
+        Commands.Clear();
+        int commandsCount = GetChildCount();
+        for (int i = 0; i < commandsCount; i++)
+        {
+            GetChild(i).QueueFree();
+        }
+    }
 }
