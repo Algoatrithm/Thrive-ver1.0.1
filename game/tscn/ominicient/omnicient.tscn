@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0mqwch4nnd3x"]
+
+[ext_resource type="Texture2D" uid="uid://degfwd6ll7k8o" path="res://icon.svg" id="1_1ajbd"]
+
+[node name="Omnicient" type="Node"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2400, 1080)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(930, 449)
+texture = ExtResource("1_1ajbd")

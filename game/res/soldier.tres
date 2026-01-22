@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bbxjiyqh35ltp"]
+
+[ext_resource type="Script" uid="uid://yoj83fllgx24" path="res://game/cs/army/Soldier.cs" id="1_s7u7x"]
+
+[resource]
+script = ExtResource("1_s7u7x")
