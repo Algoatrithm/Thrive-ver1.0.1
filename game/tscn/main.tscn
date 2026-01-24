@@ -49,6 +49,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="CommandDetails" type="Label" parent="OmnicientControl/Control/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ControlButtons" type="HBoxContainer" parent="OmnicientControl/Control/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2

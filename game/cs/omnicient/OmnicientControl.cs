@@ -6,6 +6,7 @@ public partial class OmnicientControl : CanvasLayer
     Node2D ClickedObject;
     Camera2D Camera;
     HBoxContainer ControlButtons;
+    Label CommandDetails;
 
     Godot.Collections.Array<Callable> Callables = new Godot.Collections.Array<Callable>();
 
@@ -18,6 +19,7 @@ public partial class OmnicientControl : CanvasLayer
         WorldServer.Instance.ClearObjectPassed += OnClearObjectPassed;
         Camera = GetNode<Camera2D>("Camera2D");
         ControlButtons = (HBoxContainer)FindChild("ControlButtons");
+        CommandDetails = (Label)FindChild("CommandDetails");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -26,6 +28,11 @@ public partial class OmnicientControl : CanvasLayer
         {
             Camera.GlobalPosition = ClickedObject.GlobalPosition;
         }
+    }
+
+    public void SetCommandDetails(String text)
+    {
+        CommandDetails.Text = text;
     }
 
     public void OnObjectPassed(Node2D node, Godot.Collections.Array<Callable> callables)

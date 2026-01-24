@@ -107,12 +107,17 @@ public partial class Eagle : Animal
     }
 
     // Causes bug, may have to disable this or maybe for future use
-    public async void Travel()
+    public void Travel()
     {
-        GD.Print("Travel");
         if (HasLanded)
             return;
         //await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
+        WorldServer.Instance.CallMethod(
+            "OmnicientControl",
+            "SetCommandDetails",
+            "Click on any area on the screen to move the creature.\nThe creature will move to the newest assigned position and goes back\nto its default behaviour until it reaches the newest assigned position."
+        );
+
         IsUserControlled = true;
     }
 

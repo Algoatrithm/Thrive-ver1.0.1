@@ -34,6 +34,51 @@ public partial class WorldServer : Node
         Instance = this;
     }
 
+    public void CallMethod(String nodeName, String methodName, Variant arg1)
+    {
+        try
+        {
+            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName, false);
+            nodeTarget.Call(methodName, arg1);
+        }
+        catch
+        {
+            GD.PushError("Something went wrong with CallMethod function with 1 parameter");
+        }
+    }
+
+    public void CallMethod(String nodeName, String methodName, Variant arg1, Variant arg2)
+    {
+        try
+        {
+            var nodeTarget = GetTree().Root.FindChild(nodeName, false);
+            nodeTarget.Call(methodName, arg1, arg2);
+        }
+        catch
+        {
+            GD.PushError("Something went wrong with CallMethod function with 2 parameters");
+        }
+    }
+
+    public void CallMethod(
+        String nodeName,
+        String methodName,
+        Variant arg1,
+        Variant arg2,
+        Variant arg3
+    )
+    {
+        try
+        {
+            var nodeTarget = GetTree().Root.FindChild(nodeName, false);
+            nodeTarget.Call(methodName, arg1, arg2, arg3);
+        }
+        catch
+        {
+            GD.PushError("Something went wrong with CallMethod function with 3 parameters");
+        }
+    }
+
     public void SetObject(Node2D obj)
     {
         EmitSignal(SignalName.ObjectPassed, obj);
