@@ -115,7 +115,7 @@ public partial class Eagle : Animal
         WorldServer.Instance.CallMethod(
             "OmnicientControl",
             "SetCommandDetails",
-            "Click on any area on the screen to move the creature.\nThe creature will move to the newest assigned position and goes back\nto its default behaviour until it reaches the newest assigned position."
+            "Click on any area on the screen to move the creature.\nThe creature will move to the newest assigned position and goes back\nto its default behaviour once it reaches the newest assigned position."
         );
 
         IsUserControlled = true;
@@ -146,6 +146,11 @@ public partial class Eagle : Animal
         else if (IsTraveling)
         {
             Scout();
+            WorldServer.Instance.CallMethod(
+                "OmnicientControl",
+                "SetCommandDetails",
+                "Select any available command to control or interact with the creature."
+            );
         }
         return;
     }

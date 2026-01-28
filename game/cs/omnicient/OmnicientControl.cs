@@ -6,10 +6,11 @@ public partial class OmnicientControl : CanvasLayer
     Node2D ClickedObject;
     Camera2D Camera;
     HBoxContainer ControlButtons;
-    Label CommandDetails;
 
     Godot.Collections.Array<Callable> Callables = new Godot.Collections.Array<Callable>();
 
+    [Export]
+    public Vector2 Boundary = new Vector2(1200, 950);
     bool LockedIn = false;
     bool AwaitingInput = false;
 
@@ -17,9 +18,13 @@ public partial class OmnicientControl : CanvasLayer
     {
         WorldServer.Instance.ObjectPassed += OnObjectPassed;
         WorldServer.Instance.ClearObjectPassed += OnClearObjectPassed;
-        Camera = GetNode<Camera2D>("Camera2D");
+        Camera = GetNode<Camera2D>("OmnicientsView");
         ControlButtons = (HBoxContainer)FindChild("ControlButtons");
-        CommandDetails = (Label)FindChild("CommandDetails");
+
+        Camera.LimitLeft = 0;
+        Camera.LimitTop = 0;
+        Camera.LimitBottom = (int)Boundary.Y;
+        Camera.LimitRight = (int)Boundary.X;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -30,9 +35,27 @@ public partial class OmnicientControl : CanvasLayer
         }
     }
 
+    /* Use WorldServer.Instance.CallMethod(
+              "OmnicientControl",
+              "SetCommandDetails",
+              "Text here"
+    ); For easier access */
     public void SetCommandDetails(String text)
     {
-        CommandDetails.Text = text;
+        FindChild("CommandDetails").Set("text", text);
+    }
+
+    /* Use WorldServer.Instance.CallMethod(
+              "OmnicientControl",
+              "SetWarning",
+              "Text here"
+    ); For easier access */
+    public async void SetWarning(String text)
+    {
+        Node node = FindChild("Warning");
+        node.Set("text", text);
+        await ToSignal(GetTree().CreateTimer(2), SceneTreeTimer.SignalName.Timeout);
+        node.Set("text", "");
     }
 
     public void OnObjectPassed(Node2D node, Godot.Collections.Array<Callable> callables)

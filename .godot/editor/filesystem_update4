@@ -1,8 +1,11 @@
+res://game/tscn/regions/region_0.tscn
+res://game/res/sadness.tres
+res://game/tscn/regions/region_0.gdshader
 res://game/tscn/main.tscn
-res://game/tscn/ominicient/control_buttons/ControlButtons.cs
 res://game/cs/Animals/Eagle.cs
 res://WorldServer.cs
 res://game/cs/popups/ScreenMessage.cs
+res://game/tscn/ominicient/control_buttons/ControlButtons.cs
 res://game/cs/Main.cs
 res://others/reusable/Indicator.cs
 res://game/cs/Animals/Animal.cs
@@ -11,5 +14,3 @@ res://game/cs/nature/Tree.cs
 res://game/cs/Regions/Region0.cs
 res://others/dynamic/Entity.cs
 res://game/cs/omnicient/OmnicientsView.cs
-res://game/tscn/regions/region_0.tscn
-res://game/res/control.tscn

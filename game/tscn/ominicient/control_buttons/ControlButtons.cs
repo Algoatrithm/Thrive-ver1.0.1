@@ -22,7 +22,10 @@ public partial class ControlButtons : HBoxContainer
         int commandsCount = Commands.Count;
         for (int i = 0; i < commandsCount; i++)
         {
-            AddChild(Commands[i]);
+            if (Commands[i].GetParent() == null)
+            {
+                AddChild(Commands[i]);
+            }
         }
     }
 

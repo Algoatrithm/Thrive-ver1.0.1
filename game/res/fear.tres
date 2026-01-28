@@ -1,0 +1,32 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://xbrstgjmmvxu"]
+
+[ext_resource type="Curve" uid="uid://dtaxakr7gxhrf" path="res://game/res/energy_movement_pattern/calm.tres" id="1_83yq3"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_tawv1"]
+curve_y = ExtResource("1_83yq3")
+
+[sub_resource type="Curve" id="Curve_63m2v"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_srssx"]
+curve = SubResource("Curve_63m2v")
+
+[resource]
+emission_shape_offset = Vector3(-70, 0, 0)
+direction = Vector3(1, -0.1, 0)
+spread = 5.0
+flatness = 1.0
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+directional_velocity_min = 30.0
+directional_velocity_max = 30.0
+directional_velocity_curve = SubResource("CurveXYZTexture_tawv1")
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_srssx")
+color = Color(1, 0, 1, 0.666667)
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 0.0
+turbulence_noise_speed_random = 4.0

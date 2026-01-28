@@ -29,6 +29,17 @@ public partial class WorldServer : Node
         STONE_PLATFORM,
     }
 
+    public enum StrandType
+    {
+        vitality,
+        anger,
+        disgust,
+        fear,
+        happines,
+        sadness,
+        end,
+    }
+
     public override void _Ready()
     {
         Instance = this;
@@ -45,6 +56,29 @@ public partial class WorldServer : Node
         {
             GD.PushError("Something went wrong with CallMethod function with 1 parameter");
         }
+    }
+
+    public GpuParticles2D CreateStrand(StrandType strandType, Node2D node)
+    {
+        GpuParticles2D strand = new()
+        {
+            ZIndex = 10,
+            Amount = 5,
+            Texture = ResourceLoader.Load<Texture2D>("res://game/res/single_smokelete.png"),
+            Lifetime = 3.0f,
+            Randomness = 1.0f,
+            LocalCoords = true,
+            TrailEnabled = true,
+            TrailLifetime = 2.0f,
+            TrailSections = 16,
+            TrailSectionSubdivisions = 16,
+            ProcessMaterial = ResourceLoader.Load<ParticleProcessMaterial>(
+                "res://game/res/" + strandType.ToString() + ".tres"
+            ),
+        };
+
+        node.AddChild(strand);
+        return strand;
     }
 
     public void CallMethod(String nodeName, String methodName, Variant arg1, Variant arg2)
