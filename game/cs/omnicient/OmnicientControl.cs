@@ -13,6 +13,14 @@ public partial class OmnicientControl : CanvasLayer
     public Vector2 Boundary = new Vector2(1200, 950);
     bool LockedIn = false;
     bool AwaitingInput = false;
+    Node CancelButton;
+
+    private enum PossesionType
+    {
+        Full,
+        Partial,
+        Light,
+    }
 
     public override void _Ready()
     {
@@ -37,37 +45,51 @@ public partial class OmnicientControl : CanvasLayer
         }
     }
 
+    public void AddCancelButton(Node targetToNegate)
+    {
+        if (FindChild("ControlButtons").GetChildCount() > 0)
+            return;
+        Node cancelButton = ResourceLoader
+            .Load<PackedScene>("res://game/tscn/popups/cancel.tscn")
+            .Instantiate();
+        FindChild("ControlButtons").AddChild(cancelButton);
+        ((Button)FindChild("ControlButtons").GetChild(0)).Pressed += () =>
+            RemoveCancelButton(cancelButton, targetToNegate);
+        CancelButton = cancelButton;
+    }
+
+    public void RemoveCancelButton(Node target, Node TargetToOperate)
+    {
+        if (FindChild("ControlButtons").GetChildCount() < 1)
+            return;
+        // Hide the target
+        TargetToOperate.Call("HideButtons");
+        // Removes the Cancel button
+        target.QueueFree();
+    }
+
+    public void RemoveCancelButton()
+    {
+        // Removes the Cancel button
+        CancelButton.QueueFree();
+    }
+
     public void OnFullPossesion()
     {
-        LockedIn = true;
-        WorldServer.Instance.CallMethod(
-            "OmnicientControl",
-            "SetCommandDetails",
-            "Select any available command to control or interact with the creature."
-        );
-        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
-        for (int i = 0; i < Callables.Count; i++)
-        {
-            ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
-        }
+        SetPossesionType(PossesionType.Full);
     }
 
     public void OnPartialPossesion()
     {
-        LockedIn = true;
-        WorldServer.Instance.CallMethod(
-            "OmnicientControl",
-            "SetCommandDetails",
-            "Select any available command to control or interact with the creature."
-        );
-        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
-        for (int i = 0; i < Callables.Count; i++)
-        {
-            ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
-        }
+        SetPossesionType(PossesionType.Partial);
     }
 
     public void OnLightPossesion()
+    {
+        SetPossesionType(PossesionType.Light);
+    }
+
+    private void SetPossesionType(PossesionType pos)
     {
         LockedIn = true;
         WorldServer.Instance.CallMethod(
@@ -79,6 +101,17 @@ public partial class OmnicientControl : CanvasLayer
         for (int i = 0; i < Callables.Count; i++)
         {
             ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
+        }
+
+        RemoveCancelButton();
+        switch (pos)
+        {
+            case PossesionType.Full:
+                break;
+            case PossesionType.Partial:
+                break;
+            case PossesionType.Light:
+                break;
         }
     }
 

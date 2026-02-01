@@ -45,32 +45,6 @@ public partial class WorldServer : Node
         Instance = this;
     }
 
-    public void CallMethod(String nodeName, String methodName)
-    {
-        try
-        {
-            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName);
-            nodeTarget.Call(methodName);
-        }
-        catch
-        {
-            GD.PushError("Something went wrong with CallMethod function with 0 parameter");
-        }
-    }
-
-    public void CallMethod(String nodeName, String methodName, Variant arg1)
-    {
-        try
-        {
-            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName);
-            nodeTarget.Call(methodName, arg1);
-        }
-        catch
-        {
-            GD.PushError("Something went wrong with CallMethod function with 1 parameter");
-        }
-    }
-
     public GpuParticles2D CreateStrand(StrandType strandType, Node2D node)
     {
         GpuParticles2D strand = new()
@@ -94,6 +68,36 @@ public partial class WorldServer : Node
         return strand;
     }
 
+    public void CallMethod(String nodeName, String methodName)
+    {
+        try
+        {
+            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName);
+            nodeTarget.Call(methodName);
+        }
+        catch
+        {
+            GD.PushError(
+                $"Something went wrong with CallMethod(String {nodeName}, String {methodName})."
+            );
+        }
+    }
+
+    public void CallMethod(String nodeName, String methodName, Variant arg1)
+    {
+        try
+        {
+            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName);
+            nodeTarget.Call(methodName, arg1);
+        }
+        catch
+        {
+            GD.PushError(
+                $"Something went wrong with CallMethod(String {nodeName}, String {methodName})."
+            );
+        }
+    }
+
     public void CallMethod(String nodeName, String methodName, Variant arg1, Variant arg2)
     {
         try
@@ -103,7 +107,9 @@ public partial class WorldServer : Node
         }
         catch
         {
-            GD.PushError("Something went wrong with CallMethod function with 2 parameters");
+            GD.PushError(
+                $"Something went wrong with CallMethod(String {nodeName}, String {methodName})."
+            );
         }
     }
 
@@ -122,7 +128,9 @@ public partial class WorldServer : Node
         }
         catch
         {
-            GD.PushError("Something went wrong with CallMethod function with 3 parameters");
+            GD.PushError(
+                $"Something went wrong with CallMethod(String {nodeName}, String {methodName})."
+            );
         }
     }
 

@@ -181,7 +181,6 @@ public partial class Animal : Node2D
             WorldServer.Instance.CallMethod("OmnicientControl", "SetCommandDetails", "");
             return;
         }
-
         WorldServer.Instance.CallMethod("PossesionOptions", "ShowButtons");
         IsPossesed = true;
         WorldServer.Instance.SetObject(this, Commands);
