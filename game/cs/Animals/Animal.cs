@@ -35,10 +35,7 @@ public partial class Animal : Node2D
 
     public override void _Notification(int what)
     {
-        if (what == NotificationWMCloseRequest)
-        {
-            
-        }
+        if (what == NotificationWMCloseRequest) { }
     }
 
     private void CreateStrand()
@@ -184,11 +181,8 @@ public partial class Animal : Node2D
             WorldServer.Instance.CallMethod("OmnicientControl", "SetCommandDetails", "");
             return;
         }
-        WorldServer.Instance.CallMethod(
-            "OmnicientControl",
-            "SetCommandDetails",
-            "Select any available command to control or interact with the creature."
-        );
+
+        WorldServer.Instance.CallMethod("PossesionOptions", "ShowButtons");
         IsPossesed = true;
         WorldServer.Instance.SetObject(this, Commands);
     }

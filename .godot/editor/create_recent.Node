@@ -1,9 +1,11 @@
 Label
+VBoxContainer
+Button
+MarginContainer
 HBoxContainer
+TileMapLayer
 GPUParticles2D
 TextureRect
 Sprite2D
 Control
 CPUParticles2D
-TileMapLayer
-Button

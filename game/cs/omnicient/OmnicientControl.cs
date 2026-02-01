@@ -21,6 +21,8 @@ public partial class OmnicientControl : CanvasLayer
         Camera = GetNode<Camera2D>("OmnicientsView");
         ControlButtons = (HBoxContainer)FindChild("ControlButtons");
 
+        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
+
         Camera.LimitLeft = 0;
         Camera.LimitTop = 0;
         Camera.LimitBottom = (int)Boundary.Y;
@@ -32,6 +34,51 @@ public partial class OmnicientControl : CanvasLayer
         if (LockedIn)
         {
             Camera.GlobalPosition = ClickedObject.GlobalPosition;
+        }
+    }
+
+    public void OnFullPossesion()
+    {
+        LockedIn = true;
+        WorldServer.Instance.CallMethod(
+            "OmnicientControl",
+            "SetCommandDetails",
+            "Select any available command to control or interact with the creature."
+        );
+        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
+        for (int i = 0; i < Callables.Count; i++)
+        {
+            ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
+        }
+    }
+
+    public void OnPartialPossesion()
+    {
+        LockedIn = true;
+        WorldServer.Instance.CallMethod(
+            "OmnicientControl",
+            "SetCommandDetails",
+            "Select any available command to control or interact with the creature."
+        );
+        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
+        for (int i = 0; i < Callables.Count; i++)
+        {
+            ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
+        }
+    }
+
+    public void OnLightPossesion()
+    {
+        LockedIn = true;
+        WorldServer.Instance.CallMethod(
+            "OmnicientControl",
+            "SetCommandDetails",
+            "Select any available command to control or interact with the creature."
+        );
+        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
+        for (int i = 0; i < Callables.Count; i++)
+        {
+            ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
         }
     }
 
@@ -60,14 +107,8 @@ public partial class OmnicientControl : CanvasLayer
 
     public void OnObjectPassed(Node2D node, Godot.Collections.Array<Callable> callables)
     {
-        ClickedObject = node;
-        LockedIn = true;
         Callables = callables;
-
-        for (int i = 0; i < callables.Count; i++)
-        {
-            ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
-        }
+        ClickedObject = node;
     }
 
     public void OnClearObjectPassed()

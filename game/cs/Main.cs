@@ -28,7 +28,8 @@ public partial class Main : Node2D
 
     public override void _Process(double delta)
     {
-        _AutoSave.Text = "Auto Saving in " + ((int)WorldTimer.TimeLeft).ToString();
+        if ((bool)Settings["AutoSave"])
+            _AutoSave.Text = "Auto Saving in " + ((int)WorldTimer.TimeLeft).ToString();
     }
 
     private void Save(Node who)

@@ -45,11 +45,24 @@ public partial class WorldServer : Node
         Instance = this;
     }
 
+    public void CallMethod(String nodeName, String methodName)
+    {
+        try
+        {
+            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName);
+            nodeTarget.Call(methodName);
+        }
+        catch
+        {
+            GD.PushError("Something went wrong with CallMethod function with 0 parameter");
+        }
+    }
+
     public void CallMethod(String nodeName, String methodName, Variant arg1)
     {
         try
         {
-            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName, false);
+            var nodeTarget = GetTree().Root.GetChild(1).FindChild(nodeName);
             nodeTarget.Call(methodName, arg1);
         }
         catch
@@ -85,7 +98,7 @@ public partial class WorldServer : Node
     {
         try
         {
-            var nodeTarget = GetTree().Root.FindChild(nodeName, false);
+            var nodeTarget = GetTree().Root.FindChild(nodeName);
             nodeTarget.Call(methodName, arg1, arg2);
         }
         catch
@@ -104,7 +117,7 @@ public partial class WorldServer : Node
     {
         try
         {
-            var nodeTarget = GetTree().Root.FindChild(nodeName, false);
+            var nodeTarget = GetTree().Root.FindChild(nodeName);
             nodeTarget.Call(methodName, arg1, arg2, arg3);
         }
         catch

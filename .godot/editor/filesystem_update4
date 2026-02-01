@@ -14,3 +14,9 @@ res://game/cs/nature/Tree.cs
 res://game/cs/Regions/Region0.cs
 res://others/dynamic/Entity.cs
 res://game/cs/omnicient/OmnicientsView.cs
+res://game/tscn/popups/Button.cs
+res://game/tscn/popups/PartialPossesion.cs
+res://game/tscn/popups/LightPossesion.cs
+res://game/tscn/popups/FullPossesion.cs
+res://game/tscn/ominicient/omnicient.tscn
+res://game/tscn/ominicient/possesion_buttons/PossesionOptions.cs
