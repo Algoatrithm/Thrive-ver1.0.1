@@ -1,4 +1,4 @@
-# Untitled 2D God Game
+#  Thrive
 
 This project is an experimental 2D game focused on **observation, interpretation, and indirect control** rather than direct player action.
 
