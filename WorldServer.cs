@@ -17,6 +17,7 @@ public partial class WorldServer : Node
     public delegate void EventEventHandler();
     public const string Path_ScreenMessage = "res://game/tscn/popups/screen_message.tscn";
     public static WorldServer Instance { get; private set; }
+    private Node2D CurrentRegion = null;
 
     public enum OBJECT
     {
@@ -43,6 +44,34 @@ public partial class WorldServer : Node
     public override void _Ready()
     {
         Instance = this;
+    }
+
+    public Node2D GetCurrentRegion()
+    {
+        return CurrentRegion;
+    }
+
+    public void SetCurrentRegion(Node2D region)
+    {
+        CurrentRegion = region;
+    }
+
+    public void ShowLoadingScreen()
+    {
+        GD.Print("Loading...");
+    }
+
+    public void HideLoadingScreen()
+    {
+        GD.Print("Loaded!");
+    }
+
+    public void SwitchToAreaDomain(Node2D areaDomainToSwitchTo)
+    {
+        ShowLoadingScreen();
+        GetTree().Root.RemoveChild(CurrentRegion);
+        GetTree().Root.FindChild("World").AddChild(areaDomainToSwitchTo);
+        HideLoadingScreen();
     }
 
     public GpuParticles2D CreateStrand(StrandType strandType, Node2D node)

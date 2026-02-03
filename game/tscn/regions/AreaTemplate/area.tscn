@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=4 uid="uid://c440yh6cqr3x3"]
+
+[ext_resource type="Texture2D" uid="uid://c4enmah5n2ctm" path="res://game/assets/BaseSet (3).png" id="1_6xtj8"]
+[ext_resource type="Script" uid="uid://yu1dl7o0k2b4" path="res://game/tscn/regions/AreaTemplate/AreaTemplate.cs" id="1_qrrul"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l1rej"]
+texture = ExtResource("1_6xtj8")
+21:18/0 = 0
+22:19/0 = 0
+22:18/0 = 0
+23:18/0 = 0
+23:19/0 = 0
+23:20/0 = 0
+21:20/0 = 0
+21:19/0 = 0
+22:20/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u88ld"]
+sources/0 = SubResource("TileSetAtlasSource_l1rej")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b7tpc"]
+radius = 23.7
+
+[node name="AreaTemplate" type="Node2D"]
+script = ExtResource("1_qrrul")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAAVABIAAAAAAAEAAAAVABMAAAAAAAIAAAAVABQAAAABAAAAAAAWABIAAAABAAEAAAAWABMAAAABAAIAAAAWABQAAAACAAAAAAAXABIAAAACAAEAAAAXABMAAAACAAIAAAAXABQAAAA=")
+tile_set = SubResource("TileSet_u88ld")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(24, 27)
+shape = SubResource("CircleShape2D_b7tpc")
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="OnAreaClicked"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bl73b4hj5a1f8" path="res://game/cs/Main.cs" id="1_a2col"]
 [ext_resource type="Script" uid="uid://bmk6vhlj3qqd2" path="res://game/cs/omnicient/OmnicientControl.cs" id="3_4omhi"]
 [ext_resource type="Script" uid="uid://c6cpf3jfmoxh8" path="res://game/cs/omnicient/OmnicientsView.cs" id="3_hphxo"]
-[ext_resource type="PackedScene" uid="uid://dq2y6wocjibie" path="res://game/tscn/regions/region_0.tscn" id="3_mo5yn"]
+[ext_resource type="PackedScene" uid="uid://dq2y6wocjibie" path="res://game/tscn/regions/Region0/region_0.tscn" id="3_mo5yn"]
 [ext_resource type="Script" uid="uid://c5kf0h3yvl5ws" path="res://game/tscn/ominicient/control_buttons/ControlButtons.cs" id="5_4omhi"]
 [ext_resource type="Script" uid="uid://ccnk6c1v5fkit" path="res://game/tscn/popups/FullPossesion.cs" id="5_e8k3d"]
 [ext_resource type="Script" uid="uid://naygnp3q4gi5" path="res://game/tscn/ominicient/possesion_buttons/PossesionOptions.cs" id="5_hfqkq"]
@@ -26,7 +26,9 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_a2col")
 
-[node name="Region0" parent="." instance=ExtResource("3_mo5yn")]
+[node name="World" type="Node2D" parent="."]
+
+[node name="Region0" parent="World" instance=ExtResource("3_mo5yn")]
 position = Vector2(16, 1)
 metadata/_edit_lock_ = true
 
