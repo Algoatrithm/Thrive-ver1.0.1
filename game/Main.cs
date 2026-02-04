@@ -7,17 +7,9 @@ public partial class Main : Node2D
     SceneTreeTimer WorldTimer;
     Label _AutoSave;
 
-    Godot.Collections.Dictionary<string, Variant> Settings = new Godot.Collections.Dictionary<
-        string,
-        Variant
-    >
-    {
-        { "AutoSave", false },
-    };
-
     public override void _Ready()
     {
-        if ((bool)Settings["AutoSave"])
+        if ((bool)WorldServer.Instance.GetSetting(WorldServer.SettingKeys.AutoSave))
         {
             _AutoSave = (Label)FindChild("AutoSave");
             WorldTimer = GetTree().CreateTimer(30);
@@ -28,7 +20,7 @@ public partial class Main : Node2D
 
     public override void _Process(double delta)
     {
-        if ((bool)Settings["AutoSave"])
+        if ((bool)WorldServer.Instance.GetSetting(WorldServer.SettingKeys.AutoSave))
             _AutoSave.Text = "Auto Saving in " + ((int)WorldTimer.TimeLeft).ToString();
     }
 

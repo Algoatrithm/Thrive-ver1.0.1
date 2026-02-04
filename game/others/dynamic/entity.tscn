@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bp18u216ys0r4" path="res://game/others/dynamic/Entity.cs" id="1_bagj1"]
 [ext_resource type="Texture2D" uid="uid://degfwd6ll7k8o" path="res://icon.svg" id="2_mnb70"]
 
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_emt18"]
 animations = [{
 "frames": [{

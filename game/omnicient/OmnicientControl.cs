@@ -91,6 +91,7 @@ public partial class OmnicientControl : CanvasLayer
 
     private void SetPossesionType(PossesionType pos)
     {
+        ClickedObject.Call("_OnPressedPossesed");
         LockedIn = true;
         WorldServer.Instance.CallMethod(
             "OmnicientControl",

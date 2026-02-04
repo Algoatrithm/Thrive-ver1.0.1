@@ -41,6 +41,21 @@ public partial class WorldServer : Node
         end,
     }
 
+    private Godot.Collections.Dictionary<string, Variant> Settings =
+        new Godot.Collections.Dictionary<string, Variant>
+        {
+            { "AutoSave", false },
+            { "LockZoom", false },
+            { "LockPan", false },
+        };
+
+    public enum SettingKeys
+    {
+        AutoSave,
+        LockZoom,
+        LockPan,
+    }
+
     public override void _Ready()
     {
         Instance = this;
@@ -64,6 +79,16 @@ public partial class WorldServer : Node
     public void HideLoadingScreen()
     {
         GD.Print("Loaded!");
+    }
+
+    public void SetSetting(SettingKeys key, Variant val)
+    {
+        Settings[key.ToString()] = val;
+    }
+
+    public Variant GetSetting(SettingKeys key)
+    {
+        return Settings[key.ToString()];
     }
 
     public void SwitchToAreaDomain(Node2D areaDomainToSwitchTo)

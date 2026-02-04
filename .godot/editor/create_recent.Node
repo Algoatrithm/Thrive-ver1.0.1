@@ -1,6 +1,6 @@
+Node2D
 AnimationPlayer
 TileMapLayer
-Node2D
 TouchScreenButton
 Area2D
 TileMap
@@ -12,4 +12,3 @@ HBoxContainer
 GPUParticles2D
 TextureRect
 Sprite2D
-Control

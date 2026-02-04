@@ -46,3 +46,4 @@ res://game/omnicient/control_buttons/ControlButtons.cs
 res://game/classes/AreaTemplate/area.tscn
 res://game/classes/AreaTemplate/area_domain_template.tscn
 res://game/omnicient/omnicient.tscn
+res://game/others/dynamic/entity.tscn

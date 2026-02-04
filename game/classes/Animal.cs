@@ -179,11 +179,22 @@ public partial class Animal : Node2D
             IsPossesed = false;
             WorldServer.Instance.ClearObject();
             WorldServer.Instance.CallMethod("OmnicientControl", "SetCommandDetails", "");
+            _OnPressedUnPossesed();
             return;
         }
         WorldServer.Instance.CallMethod("PossesionOptions", "ShowButtons");
         IsPossesed = true;
         WorldServer.Instance.SetObject(this, Commands);
+    }
+
+    public virtual void _OnPressedPossesed()
+    {
+        GD.Print("djdj");
+    }
+
+    public virtual void _OnPressedUnPossesed()
+    {
+        WorldServer.Instance.SetSetting(WorldServer.SettingKeys.LockZoom, false);
     }
 
     public virtual void AnimalMovement() { }

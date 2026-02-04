@@ -31,6 +31,16 @@ public partial class Eagle : Animal
         Scout();
     }
 
+    public override void _OnPressedPossesed()
+    {
+        WorldServer.Instance.SetSetting(WorldServer.SettingKeys.LockZoom, true);
+        WorldServer.Instance.CallMethod(
+            "OmnicientsView",
+            "SetFixedCameraZoom",
+            new Vector2(17, 17)
+        );
+    }
+
     public override void _Input(InputEvent @event)
     {
         if (IsUserControlled && @event.IsActionPressed("Click"))
