@@ -1,6 +1,7 @@
+TextureRect
+TileMapLayer
 Node2D
 AnimationPlayer
-TileMapLayer
 TouchScreenButton
 Area2D
 TileMap
@@ -10,5 +11,4 @@ VBoxContainer
 MarginContainer
 HBoxContainer
 GPUParticles2D
-TextureRect
 Sprite2D

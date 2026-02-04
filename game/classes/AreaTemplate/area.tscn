@@ -69,7 +69,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAVABIAAAAAAAEAAAAVABMAAAAAAAIAAAAVABQ
 tile_set = SubResource("TileSet_u88ld")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-visible = false
 position = Vector2(24, 27)
 shape = SubResource("CircleShape2D_b7tpc")
 

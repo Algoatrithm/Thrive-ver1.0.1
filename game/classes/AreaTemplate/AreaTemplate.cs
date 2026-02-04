@@ -28,7 +28,7 @@ public partial class AreaTemplate : Node2D
         if (!HasGeneratedDomain)
         {
             PackedScene _PackedScene = ResourceLoader.Load<PackedScene>(
-                "res://game/tscn/regions/AreaTemplate/area_domain_template.tscn"
+                "res://game/classes/AreaTemplate/area_domain_template.tscn"
             );
             AreaDomain = (AreaDomainTemplate)_PackedScene.Instantiate();
             AreaDomain.GenerateArea();

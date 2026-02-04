@@ -39,8 +39,9 @@ script = ExtResource("3_ioaqv")
 position = Vector2(342, 390)
 zoom = Vector2(10, 10)
 process_callback = 0
-position_smoothing_speed = 0.2
+position_smoothing_enabled = true
 script = ExtResource("4_li27q")
+Sensitivity = 0.3
 
 [node name="Control" type="Control" parent="OmnicientControl"]
 layout_mode = 3
