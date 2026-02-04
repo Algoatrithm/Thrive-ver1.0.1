@@ -1,7 +1,8 @@
+AnimationPlayer
+TileMapLayer
 Node2D
 TouchScreenButton
 Area2D
-TileMapLayer
 TileMap
 Button
 Label

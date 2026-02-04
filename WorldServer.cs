@@ -15,7 +15,7 @@ public partial class WorldServer : Node
 
     [Signal]
     public delegate void EventEventHandler();
-    public const string Path_ScreenMessage = "res://game/tscn/popups/screen_message.tscn";
+    public const string Path_ScreenMessage = "res://game/popups/screen_message.tscn";
     public static WorldServer Instance { get; private set; }
     private Node2D CurrentRegion = null;
 
@@ -69,8 +69,11 @@ public partial class WorldServer : Node
     public void SwitchToAreaDomain(Node2D areaDomainToSwitchTo)
     {
         ShowLoadingScreen();
-        GetTree().Root.RemoveChild(CurrentRegion);
-        GetTree().Root.FindChild("World").AddChild(areaDomainToSwitchTo);
+        GetTree()
+            .Root.GetChild(1)
+            .FindChild("World")
+            .RemoveChild(GetTree().Root.GetChild(1).FindChild("World").GetChild(0));
+        GetTree().Root.GetChild(1).FindChild("World").AddChild(areaDomainToSwitchTo);
         HideLoadingScreen();
     }
 
@@ -80,7 +83,7 @@ public partial class WorldServer : Node
         {
             ZIndex = 10,
             Amount = 5,
-            Texture = ResourceLoader.Load<Texture2D>("res://game/res/single_smokelete.png"),
+            Texture = ResourceLoader.Load<Texture2D>("res://game/assets/smokelet.png"),
             Lifetime = 3.0f,
             Randomness = 1.0f,
             LocalCoords = true,
