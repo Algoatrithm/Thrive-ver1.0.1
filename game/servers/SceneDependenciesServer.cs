@@ -76,8 +76,8 @@ public partial class SceneDependenciesServer : Node
         GpuParticles2D strand = new()
         {
             ZIndex = 10,
-            Amount = 5,
-            Texture = ResourceLoader.Load<Texture2D>("res://game/assets/smokelet.png"),
+            Amount = 1,
+            Texture = ResourceLoader.Load<Texture2D>("res://game/assets/single_smokelete.png"),
             Lifetime = 3.0f,
             Randomness = 1.0f,
             LocalCoords = true,
@@ -85,6 +85,8 @@ public partial class SceneDependenciesServer : Node
             TrailLifetime = 2.0f,
             TrailSections = 16,
             TrailSectionSubdivisions = 16,
+            Emitting = false,
+            OneShot = true,
             ProcessMaterial = ResourceLoader.Load<ParticleProcessMaterial>(
                 "res://game/res/" + strandType.ToString() + ".tres"
             ),

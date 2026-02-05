@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://ci1tks2twpflh"]
 
 [ext_resource type="Script" uid="uid://bl73b4hj5a1f8" path="res://game/Main.cs" id="1_itumj"]
-[ext_resource type="PackedScene" uid="uid://dq2y6wocjibie" path="res://game/regions/Region0/region_0.tscn" id="2_dp3pf"]
+[ext_resource type="PackedScene" uid="uid://dq2y6wocjibie" path="res://game/regions/region0/region_0.tscn" id="2_dp3pf"]
 [ext_resource type="Script" uid="uid://bmk6vhlj3qqd2" path="res://game/omnicient/OmnicientControl.cs" id="3_ioaqv"]
 [ext_resource type="Script" uid="uid://c6cpf3jfmoxh8" path="res://game/omnicient/OmnicientsView.cs" id="4_li27q"]
 [ext_resource type="Script" uid="uid://naygnp3q4gi5" path="res://game/omnicient/possesion_buttons/PossesionOptions.cs" id="5_g6fv7"]
@@ -38,7 +38,7 @@ script = ExtResource("3_ioaqv")
 [node name="OmnicientsView" type="Camera2D" parent="OmnicientControl"]
 position = Vector2(342, 390)
 zoom = Vector2(10, 10)
-process_callback = 0
+limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("4_li27q")
 Sensitivity = 0.3

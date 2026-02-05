@@ -9,6 +9,7 @@ public partial class Main : Node2D
 
     public override void _Ready()
     {
+        Engine.MaxFps = 120;
         if ((bool)SceneDependenciesServer.Instance.GetSetting(UtilityServer.SettingKeys.AutoSave))
         {
             _AutoSave = (Label)FindChild("AutoSave");
@@ -20,6 +21,7 @@ public partial class Main : Node2D
 
     public override void _Process(double delta)
     {
+        GD.Print(Engine.GetFramesPerSecond());
         if ((bool)SceneDependenciesServer.Instance.GetSetting(UtilityServer.SettingKeys.AutoSave))
             _AutoSave.Text = "Auto Saving in " + ((int)WorldTimer.TimeLeft).ToString();
     }

@@ -10,14 +10,14 @@ public partial class InputServer : Node
         Instance = this;
     }
 
-    public Node NodeToAcceptInput = null;
-    public bool SpecificInput = false;
+    private Node NodeToAcceptInput = null;
+    private bool SpecificInput = false;
 
     public bool VerifyInput(Node _this)
     {
         if (SpecificInput && NodeToAcceptInput != _this)
-            return false;
-        return true;
+            return true;
+        return false;
     }
 
     public void RegisterInputReciever(Node _this)

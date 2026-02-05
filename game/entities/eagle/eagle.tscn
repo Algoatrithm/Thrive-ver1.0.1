@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bgvlleahqb4h0" path="res://game/entities/eagle/Eagle.cs" id="1_y6u08"]
 [ext_resource type="Texture2D" uid="uid://degfwd6ll7k8o" path="res://icon.svg" id="2_npcr5"]
 [ext_resource type="Texture2D" uid="uid://brskgo1727fff" path="res://game/assets/single_smokelete.png" id="3_s7qbg"]
-[ext_resource type="Material" uid="uid://cnw7bahum32vu" path="res://game/res/sadness.tres" id="4_bhl3q"]
+[ext_resource type="Material" uid="uid://dty2vc1bt26wt" path="res://game/res/will.tres" id="4_y6u08"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7cjw"]
 
@@ -91,12 +91,14 @@ libraries = {
 }
 
 [node name="GPUParticles2D8" type="GPUParticles2D" parent="."]
+visible = false
 z_index = 10
 position = Vector2(0, 3.8147e-06)
 emitting = false
-amount = 5
+amount = 1
 texture = ExtResource("3_s7qbg")
 lifetime = 6.0
+one_shot = true
 randomness = 1.0
 use_fixed_seed = true
 seed = 1070432539
@@ -105,5 +107,5 @@ trail_enabled = true
 trail_lifetime = 3.1
 trail_sections = 16
 trail_section_subdivisions = 16
-process_material = ExtResource("4_bhl3q")
+process_material = ExtResource("4_y6u08")
 metadata/_edit_lock_ = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://dq2y6wocjibie"]
 
-[ext_resource type="Script" uid="uid://br5l8rk21on8c" path="res://game/regions/Region0/Region0.cs" id="1_wyqqn"]
+[ext_resource type="Script" uid="uid://br5l8rk21on8c" path="res://game/regions/region0/Region0.cs" id="1_wyqqn"]
 [ext_resource type="Texture2D" uid="uid://icxl01xmqe77" path="res://game/assets/Map.png" id="2_w7cjw"]
 [ext_resource type="Texture2D" uid="uid://c4enmah5n2ctm" path="res://game/assets/BaseSet (3).png" id="3_iros0"]
 [ext_resource type="PackedScene" uid="uid://c440yh6cqr3x3" path="res://game/classes/AreaTemplate/area.tscn" id="4_s544g"]
@@ -939,7 +939,7 @@ position = Vector2(279, 359)
 position = Vector2(334, 337)
 
 [node name="AreaTemplate6" parent="Map/Forest" instance=ExtResource("4_s544g")]
-position = Vector2(334, 379)
+position = Vector2(335, 379)
 
 [node name="AreaTemplate7" parent="Map/Forest" instance=ExtResource("4_s544g")]
 position = Vector2(259, 389)
@@ -956,12 +956,12 @@ position = Vector2(303, 468)
 [node name="AreaTemplate11" parent="Map/Forest" instance=ExtResource("4_s544g")]
 position = Vector2(212, 449)
 
+[node name="Animal" type="Node2D" parent="."]
+
+[node name="Eagle" parent="Animal" instance=ExtResource("5_onreb")]
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_mo5yn")
-
-[node name="Animals" type="Node2D" parent="."]
-
-[node name="Eagle" parent="Animals" instance=ExtResource("5_onreb")]
 
 [node name="Objects" type="Node2D" parent="."]

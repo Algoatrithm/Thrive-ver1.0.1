@@ -1,9 +1,10 @@
+Line2D
+Node2D
 MarginContainer
 Panel
 Control
 TextureRect
 TileMapLayer
-Node2D
 AnimationPlayer
 TouchScreenButton
 Area2D

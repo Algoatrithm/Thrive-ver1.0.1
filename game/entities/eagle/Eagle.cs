@@ -77,7 +77,6 @@ public partial class Eagle : Animal
     {
         if (HasLanded || IsLanding)
             return;
-        GD.Print("Scouting");
         SetMovementTarget(GlobalPosition + new Vector2(0f, 0f));
         IsScouting = true;
         IsOnAir = true;
@@ -96,7 +95,6 @@ public partial class Eagle : Animal
         IsOnAir = true;
         IsTakingOff = false;
         IsLanding = true;
-        GD.Print("Landing");
         Tween tween = GetTree().CreateTween();
         MovementSpeed = MovementSpeed / 2;
         tween

@@ -25,7 +25,7 @@ public partial class AreaTemplate : Node2D
 
     public void OnAreaClicked()
     {
-        if (InputServer.Instance.SpecificInput && InputServer.Instance.NodeToAcceptInput != this)
+        if (InputServer.Instance.VerifyInput(this))
             return;
 
         if (!HasGeneratedDomain)

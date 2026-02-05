@@ -8,14 +8,14 @@ public partial class Animal : Node2D
     public float MovementSpeed { get; set; } = 20.0f;
     NavigationAgent2D _navigationAgent;
     public Godot.Collections.Array<Callable> Commands = new Godot.Collections.Array<Callable>();
-    public float[] StrandParameters = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+    public float[] StrandParameters = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
     private float MaxStrandParameter = 6.0f;
-    public GpuParticles2D[] StrandReference = { null, null, null, null, null, null };
+    public GpuParticles2D[] StrandReference = { null, null, null, null, null, null, null, null };
     private float StrandParametersDefault = 1.0f;
 
     private float _movementDelta;
-    bool IsUserControlled = false;
     bool IsPossesed = false;
+    bool IsClicked = false;
     bool AnimalStarted = false;
     bool IsAnimalCreatedBefore = false;
 
@@ -26,7 +26,7 @@ public partial class Animal : Node2D
         ((TouchScreenButton)FindChild("TouchScreenButton")).Pressed += OnPressed;
 
         CreateStrand();
-        UpdateStrand();
+        //UpdateStrand();
 
         AnimalStarted = true;
         if (!IsAnimalCreatedBefore)
@@ -38,31 +38,87 @@ public partial class Animal : Node2D
         if (what == NotificationWMCloseRequest) { }
     }
 
+    public void Vitality(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.vitality] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.vitality] = amount;
+
+        StrandReference[(int)UtilityServer.StrandType.vitality].Emitting = true;
+    }
+
+    public void Stamina(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.stamina] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.stamina] = amount;
+        StrandReference[(int)UtilityServer.StrandType.stamina].Emitting = true;
+    }
+
+    public void Will(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.will] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.will] = amount;
+        StrandReference[(int)UtilityServer.StrandType.will].Emitting = true;
+    }
+
+    public void Anger(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.anger] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.anger] = amount;
+        StrandReference[(int)UtilityServer.StrandType.anger].Emitting = true;
+    }
+
+    public void Disgust(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.disgust] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.disgust] = amount;
+        StrandReference[(int)UtilityServer.StrandType.disgust].Emitting = true;
+    }
+
+    public void Fear(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.fear] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.fear] = amount;
+        StrandReference[(int)UtilityServer.StrandType.fear].Emitting = true;
+    }
+
+    public void Happines(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.happines] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.happines] = amount;
+        StrandReference[(int)UtilityServer.StrandType.happines].Emitting = true;
+    }
+
+    public void Sadness(float amount = 3)
+    {
+        if (amount > 6)
+            StrandParameters[(int)UtilityServer.StrandType.sadness] = 6;
+        else if (amount <= 6)
+            StrandParameters[(int)UtilityServer.StrandType.sadness] = amount;
+        StrandReference[(int)UtilityServer.StrandType.sadness].Emitting = true;
+    }
+
     private void CreateStrand()
     {
-        if (!IsAnimalCreatedBefore)
-        {
-            StrandParameters[(int)UtilityServer.StrandType.vitality] = (float)
-                GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
-
-            StrandParameters[(int)UtilityServer.StrandType.anger] = (float)
-                GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
-
-            StrandParameters[(int)UtilityServer.StrandType.disgust] = (float)
-                GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
-
-            StrandParameters[(int)UtilityServer.StrandType.fear] = (float)
-                GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
-
-            StrandParameters[(int)UtilityServer.StrandType.happines] = (float)
-                GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
-
-            StrandParameters[(int)UtilityServer.StrandType.sadness] = (float)
-                GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
-        }
-
         StrandReference[(int)UtilityServer.StrandType.vitality] =
             SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.vitality, this);
+        StrandReference[(int)UtilityServer.StrandType.stamina] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.stamina, this);
+        StrandReference[(int)UtilityServer.StrandType.will] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.will, this);
         StrandReference[(int)UtilityServer.StrandType.anger] =
             SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.anger, this);
         StrandReference[(int)UtilityServer.StrandType.disgust] =
@@ -92,7 +148,7 @@ public partial class Animal : Node2D
             "SetWarning",
             StrandParameters[(int)strandType]
         );
-        UpdateStrand();
+        //UpdateStrand();
     }
 
     public void DecrementStrand(UtilityServer.StrandType strandType, float amount = 0.1f)
@@ -101,59 +157,60 @@ public partial class Animal : Node2D
             return;
 
         StrandParameters[(int)strandType] -= amount;
-        UpdateStrand();
+        //UpdateStrand();
     }
 
-    public void UpdateStrand()
-    {
-        StrandReference[(int)UtilityServer.StrandType.vitality].Lifetime =
-            StrandParameters[(int)UtilityServer.StrandType.vitality] + StrandParametersDefault;
-        StrandReference[(int)UtilityServer.StrandType.anger].Lifetime =
-            StrandParameters[(int)UtilityServer.StrandType.anger] + StrandParametersDefault;
-        StrandReference[(int)UtilityServer.StrandType.disgust].Lifetime =
-            StrandParameters[(int)UtilityServer.StrandType.disgust] + StrandParametersDefault;
-        StrandReference[(int)UtilityServer.StrandType.fear].Lifetime =
-            StrandParameters[(int)UtilityServer.StrandType.fear] + StrandParametersDefault;
-        StrandReference[(int)UtilityServer.StrandType.happines].Lifetime =
-            StrandParameters[(int)UtilityServer.StrandType.happines] + StrandParametersDefault;
-        StrandReference[(int)UtilityServer.StrandType.sadness].Lifetime =
-            StrandParameters[(int)UtilityServer.StrandType.sadness] + StrandParametersDefault;
-
-        for (int i = 0; i < (int)UtilityServer.StrandType.end; i++)
+    /* Depreciated
+        public void UpdateStrand()
         {
-            double n = StrandReference[i].Lifetime;
-            if (n >= 1 && n < 2)
+            StrandReference[(int)UtilityServer.StrandType.vitality].Lifetime =
+                StrandParameters[(int)UtilityServer.StrandType.vitality] + StrandParametersDefault;
+            StrandReference[(int)UtilityServer.StrandType.anger].Lifetime =
+                StrandParameters[(int)UtilityServer.StrandType.anger] + StrandParametersDefault;
+            StrandReference[(int)UtilityServer.StrandType.disgust].Lifetime =
+                StrandParameters[(int)UtilityServer.StrandType.disgust] + StrandParametersDefault;
+            StrandReference[(int)UtilityServer.StrandType.fear].Lifetime =
+                StrandParameters[(int)UtilityServer.StrandType.fear] + StrandParametersDefault;
+            StrandReference[(int)UtilityServer.StrandType.happines].Lifetime =
+                StrandParameters[(int)UtilityServer.StrandType.happines] + StrandParametersDefault;
+            StrandReference[(int)UtilityServer.StrandType.sadness].Lifetime =
+                StrandParameters[(int)UtilityServer.StrandType.sadness] + StrandParametersDefault;
+    
+            for (int i = 0; i < (int)UtilityServer.StrandType.end; i++)
             {
-                ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
-                    new Vector3(-12.0f, 0.0f, 0.0f);
+                double n = StrandReference[i].Lifetime;
+                if (n >= 1 && n < 2)
+                {
+                    ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
+                        new Vector3(-12.0f, 0.0f, 0.0f);
+                }
+                else if (n >= 2 && n < 3)
+                {
+                    ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
+                        new Vector3(-25.0f, 0.0f, 0.0f);
+                }
+                else if (n >= 3 && n < 4)
+                {
+                    ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
+                        new Vector3(-33.0f, 0.0f, 0.0f);
+                }
+                else if (n >= 4 && n < 5)
+                {
+                    ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
+                        new Vector3(-41.0f, 0.0f, 0.0f);
+                }
+                else if (n >= 5 && n < 6)
+                {
+                    ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
+                        new Vector3(-70.0f, 0.0f, 0.0f);
+                }
+                else if (n >= 6 && n < 7)
+                {
+                    ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
+                        new Vector3(-100.0f, 0.0f, 0.0f);
+                }
             }
-            else if (n >= 2 && n < 3)
-            {
-                ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
-                    new Vector3(-25.0f, 0.0f, 0.0f);
-            }
-            else if (n >= 3 && n < 4)
-            {
-                ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
-                    new Vector3(-33.0f, 0.0f, 0.0f);
-            }
-            else if (n >= 4 && n < 5)
-            {
-                ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
-                    new Vector3(-41.0f, 0.0f, 0.0f);
-            }
-            else if (n >= 5 && n < 6)
-            {
-                ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
-                    new Vector3(-70.0f, 0.0f, 0.0f);
-            }
-            else if (n >= 6 && n < 7)
-            {
-                ((ParticleProcessMaterial)StrandReference[i].ProcessMaterial).EmissionShapeOffset =
-                    new Vector3(-100.0f, 0.0f, 0.0f);
-            }
-        }
-    }
+        }*/
 
     public void RegisterCommand(StringName methodName)
     {
@@ -162,31 +219,33 @@ public partial class Animal : Node2D
 
     private void OnPressed()
     {
-        if (InputServer.Instance.SpecificInput && InputServer.Instance.NodeToAcceptInput != this)
+        if (InputServer.Instance.VerifyInput(this))
             return;
         GetViewport().SetInputAsHandled();
         InputServer.Instance.RegisterInputReciever(this);
-        if (IsPossesed)
+        if (IsClicked)
         {
-            IsPossesed = false;
             SceneDependenciesServer.Instance.ClearObject();
             UtilityServer.Instance.CallMethod("OmnicientControl", "SetCommandDetails", "");
             _OnPressedUnPossesed();
             InputServer.Instance.ResetInputReciever();
+            IsClicked = false;
             return;
         }
+        SceneDependenciesServer.Instance.SetObject(this, Commands);
         UtilityServer.Instance.CallMethod("PossesionOptions", "ShowButtons");
+        IsClicked = true;
     }
 
     public virtual void _OnPressedPossesed()
     {
         IsPossesed = true;
-        SceneDependenciesServer.Instance.SetObject(this, Commands);
     }
 
     public virtual void _OnPressedUnPossesed()
     {
         SceneDependenciesServer.Instance.SetSetting(UtilityServer.SettingKeys.LockZoom, false);
+        IsPossesed = false;
     }
 
     public virtual void AnimalMovement() { }

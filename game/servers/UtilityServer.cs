@@ -34,6 +34,8 @@ public partial class UtilityServer : Node
     public enum StrandType
     {
         vitality,
+        stamina,
+        will,
         anger,
         disgust,
         fear,
