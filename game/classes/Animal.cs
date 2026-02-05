@@ -45,6 +45,14 @@ public partial class Animal : Node2D
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.vitality] = amount;
 
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
+
         StrandReference[(int)UtilityServer.StrandType.vitality].Emitting = true;
     }
 
@@ -54,6 +62,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.stamina] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.stamina] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.stamina].Emitting = true;
     }
 
@@ -63,6 +78,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.will] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.will] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.will].Emitting = true;
     }
 
@@ -72,6 +94,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.anger] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.anger] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.anger].Emitting = true;
     }
 
@@ -81,6 +110,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.disgust] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.disgust] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.disgust].Emitting = true;
     }
 
@@ -90,6 +126,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.fear] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.fear] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.fear].Emitting = true;
     }
 
@@ -99,6 +142,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.happines] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.happines] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.happines].Emitting = true;
     }
 
@@ -108,6 +158,13 @@ public partial class Animal : Node2D
             StrandParameters[(int)UtilityServer.StrandType.sadness] = 6;
         else if (amount <= 6)
             StrandParameters[(int)UtilityServer.StrandType.sadness] = amount;
+        ParticleProcessMaterial material = (ParticleProcessMaterial)
+            StrandReference[(int)UtilityServer.StrandType.vitality].ProcessMaterial;
+        material.EmissionShapeOffset = new Vector3(
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100),
+            GD.RandRange(0, 100)
+        );
         StrandReference[(int)UtilityServer.StrandType.sadness].Emitting = true;
     }
 

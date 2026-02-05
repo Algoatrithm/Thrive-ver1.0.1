@@ -43,6 +43,7 @@ public partial class Eagle : Animal
 
     public override void _Input(InputEvent @event)
     {
+        Stamina(6);
         if (IsUserControlled && @event.IsActionPressed("Click"))
             CallDeferred("SetTravel", GetGlobalMousePosition());
     }

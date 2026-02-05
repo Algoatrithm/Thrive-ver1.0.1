@@ -108,4 +108,3 @@ trail_lifetime = 3.1
 trail_sections = 16
 trail_section_subdivisions = 16
 process_material = ExtResource("4_y6u08")
-metadata/_edit_lock_ = true

@@ -92,6 +92,9 @@ public partial class SceneDependenciesServer : Node
             ),
         };
 
+        ParticleProcessMaterial material = (ParticleProcessMaterial)strand.ProcessMaterial;
+        material.EmissionShape = ParticleProcessMaterial.EmissionShapeEnum.Point;
+
         node.AddChild(strand);
         return strand;
     }
