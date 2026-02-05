@@ -33,8 +33,8 @@ public partial class Eagle : Animal
 
     public override void _OnPressedPossesed()
     {
-        WorldServer.Instance.SetSetting(WorldServer.SettingKeys.LockZoom, true);
-        WorldServer.Instance.CallMethod(
+        SceneDependenciesServer.Instance.SetSetting(UtilityServer.SettingKeys.LockZoom, true);
+        UtilityServer.Instance.CallMethod(
             "OmnicientsView",
             "SetFixedCameraZoom",
             new Vector2(17, 17)
@@ -122,7 +122,7 @@ public partial class Eagle : Animal
         if (HasLanded)
             return;
         //await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
-        WorldServer.Instance.CallMethod(
+        UtilityServer.Instance.CallMethod(
             "OmnicientControl",
             "SetCommandDetails",
             "Click on any area on the screen to move the creature.\nThe creature will move to the newest assigned position and goes back\nto its default behaviour once it reaches the newest assigned position."
@@ -156,7 +156,7 @@ public partial class Eagle : Animal
         else if (IsTraveling)
         {
             Scout();
-            WorldServer.Instance.CallMethod(
+            UtilityServer.Instance.CallMethod(
                 "OmnicientControl",
                 "SetCommandDetails",
                 "Select any available command to control or interact with the creature."

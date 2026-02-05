@@ -25,6 +25,9 @@ public partial class AreaTemplate : Node2D
 
     public void OnAreaClicked()
     {
+        if (InputServer.Instance.SpecificInput && InputServer.Instance.NodeToAcceptInput != this)
+            return;
+
         if (!HasGeneratedDomain)
         {
             PackedScene _PackedScene = ResourceLoader.Load<PackedScene>(
@@ -34,6 +37,6 @@ public partial class AreaTemplate : Node2D
             AreaDomain.GenerateArea();
             HasGeneratedDomain = true;
         }
-        WorldServer.Instance.SwitchToAreaDomain(AreaDomain);
+        UtilityServer.Instance.SwitchToAreaDomain(AreaDomain);
     }
 }

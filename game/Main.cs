@@ -9,7 +9,7 @@ public partial class Main : Node2D
 
     public override void _Ready()
     {
-        if ((bool)WorldServer.Instance.GetSetting(WorldServer.SettingKeys.AutoSave))
+        if ((bool)SceneDependenciesServer.Instance.GetSetting(UtilityServer.SettingKeys.AutoSave))
         {
             _AutoSave = (Label)FindChild("AutoSave");
             WorldTimer = GetTree().CreateTimer(30);
@@ -20,7 +20,7 @@ public partial class Main : Node2D
 
     public override void _Process(double delta)
     {
-        if ((bool)WorldServer.Instance.GetSetting(WorldServer.SettingKeys.AutoSave))
+        if ((bool)SceneDependenciesServer.Instance.GetSetting(UtilityServer.SettingKeys.AutoSave))
             _AutoSave.Text = "Auto Saving in " + ((int)WorldTimer.TimeLeft).ToString();
     }
 
@@ -31,7 +31,7 @@ public partial class Main : Node2D
 
     private void AutoSave()
     {
-        WorldServer.Instance.CallMethod("OmnicientControl", "SetWarning", "Saved!");
+        UtilityServer.Instance.CallMethod("OmnicientControl", "SetWarning", "Saved!");
         WorldTimer = GetTree().CreateTimer(30);
         if (!WorldTimer.IsConnected(SceneTreeTimer.SignalName.Timeout, Callable.From(AutoSave)))
             WorldTimer.Connect(SceneTreeTimer.SignalName.Timeout, Callable.From(AutoSave));

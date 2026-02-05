@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 WorldServer="*res://WorldServer.cs"
+GraphicsServer="*res://GraphicsServer.cs"
+InputServer="*res://InputServer.cs"
+UtilityServer="*res://UtilityServer.cs"
+SceneDependencies="*res://SceneDependenciesServer.cs"
 
 [display]
 

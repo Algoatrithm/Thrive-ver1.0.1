@@ -1,3 +1,6 @@
+MarginContainer
+Panel
+Control
 TextureRect
 TileMapLayer
 Node2D
@@ -8,7 +11,4 @@ TileMap
 Button
 Label
 VBoxContainer
-MarginContainer
 HBoxContainer
-GPUParticles2D
-Sprite2D

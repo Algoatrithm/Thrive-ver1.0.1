@@ -42,56 +42,44 @@ public partial class Animal : Node2D
     {
         if (!IsAnimalCreatedBefore)
         {
-            StrandParameters[(int)WorldServer.StrandType.vitality] = (float)
+            StrandParameters[(int)UtilityServer.StrandType.vitality] = (float)
                 GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
 
-            StrandParameters[(int)WorldServer.StrandType.anger] = (float)
+            StrandParameters[(int)UtilityServer.StrandType.anger] = (float)
                 GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
 
-            StrandParameters[(int)WorldServer.StrandType.disgust] = (float)
+            StrandParameters[(int)UtilityServer.StrandType.disgust] = (float)
                 GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
 
-            StrandParameters[(int)WorldServer.StrandType.fear] = (float)
+            StrandParameters[(int)UtilityServer.StrandType.fear] = (float)
                 GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
 
-            StrandParameters[(int)WorldServer.StrandType.happines] = (float)
+            StrandParameters[(int)UtilityServer.StrandType.happines] = (float)
                 GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
 
-            StrandParameters[(int)WorldServer.StrandType.sadness] = (float)
+            StrandParameters[(int)UtilityServer.StrandType.sadness] = (float)
                 GD.RandRange((double)StrandParametersDefault, (double)MaxStrandParameter);
         }
 
-        StrandReference[(int)WorldServer.StrandType.vitality] = WorldServer.Instance.CreateStrand(
-            WorldServer.StrandType.vitality,
-            this
-        );
-        StrandReference[(int)WorldServer.StrandType.anger] = WorldServer.Instance.CreateStrand(
-            WorldServer.StrandType.anger,
-            this
-        );
-        StrandReference[(int)WorldServer.StrandType.disgust] = WorldServer.Instance.CreateStrand(
-            WorldServer.StrandType.disgust,
-            this
-        );
-        StrandReference[(int)WorldServer.StrandType.fear] = WorldServer.Instance.CreateStrand(
-            WorldServer.StrandType.fear,
-            this
-        );
-        StrandReference[(int)WorldServer.StrandType.happines] = WorldServer.Instance.CreateStrand(
-            WorldServer.StrandType.happines,
-            this
-        );
-        StrandReference[(int)WorldServer.StrandType.sadness] = WorldServer.Instance.CreateStrand(
-            WorldServer.StrandType.sadness,
-            this
-        );
+        StrandReference[(int)UtilityServer.StrandType.vitality] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.vitality, this);
+        StrandReference[(int)UtilityServer.StrandType.anger] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.anger, this);
+        StrandReference[(int)UtilityServer.StrandType.disgust] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.disgust, this);
+        StrandReference[(int)UtilityServer.StrandType.fear] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.fear, this);
+        StrandReference[(int)UtilityServer.StrandType.happines] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.happines, this);
+        StrandReference[(int)UtilityServer.StrandType.sadness] =
+            SceneDependenciesServer.Instance.CreateStrand(UtilityServer.StrandType.sadness, this);
     }
 
-    public void IncrementStrand(WorldServer.StrandType strandType, float amount = 0.1f)
+    public void IncrementStrand(UtilityServer.StrandType strandType, float amount = 0.1f)
     {
         if (StrandParameters[(int)strandType] > MaxStrandParameter)
         {
-            WorldServer.Instance.CallMethod(
+            UtilityServer.Instance.CallMethod(
                 "OmnicientControl",
                 "SetWarning",
                 "Maximum Length Maxed: " + MaxStrandParameter
@@ -99,7 +87,7 @@ public partial class Animal : Node2D
             return;
         }
         StrandParameters[(int)strandType] += amount;
-        WorldServer.Instance.CallMethod(
+        UtilityServer.Instance.CallMethod(
             "OmnicientControl",
             "SetWarning",
             StrandParameters[(int)strandType]
@@ -107,7 +95,7 @@ public partial class Animal : Node2D
         UpdateStrand();
     }
 
-    public void DecrementStrand(WorldServer.StrandType strandType, float amount = 0.1f)
+    public void DecrementStrand(UtilityServer.StrandType strandType, float amount = 0.1f)
     {
         if (StrandParameters[(int)strandType] < StrandParametersDefault)
             return;
@@ -118,20 +106,20 @@ public partial class Animal : Node2D
 
     public void UpdateStrand()
     {
-        StrandReference[(int)WorldServer.StrandType.vitality].Lifetime =
-            StrandParameters[(int)WorldServer.StrandType.vitality] + StrandParametersDefault;
-        StrandReference[(int)WorldServer.StrandType.anger].Lifetime =
-            StrandParameters[(int)WorldServer.StrandType.anger] + StrandParametersDefault;
-        StrandReference[(int)WorldServer.StrandType.disgust].Lifetime =
-            StrandParameters[(int)WorldServer.StrandType.disgust] + StrandParametersDefault;
-        StrandReference[(int)WorldServer.StrandType.fear].Lifetime =
-            StrandParameters[(int)WorldServer.StrandType.fear] + StrandParametersDefault;
-        StrandReference[(int)WorldServer.StrandType.happines].Lifetime =
-            StrandParameters[(int)WorldServer.StrandType.happines] + StrandParametersDefault;
-        StrandReference[(int)WorldServer.StrandType.sadness].Lifetime =
-            StrandParameters[(int)WorldServer.StrandType.sadness] + StrandParametersDefault;
+        StrandReference[(int)UtilityServer.StrandType.vitality].Lifetime =
+            StrandParameters[(int)UtilityServer.StrandType.vitality] + StrandParametersDefault;
+        StrandReference[(int)UtilityServer.StrandType.anger].Lifetime =
+            StrandParameters[(int)UtilityServer.StrandType.anger] + StrandParametersDefault;
+        StrandReference[(int)UtilityServer.StrandType.disgust].Lifetime =
+            StrandParameters[(int)UtilityServer.StrandType.disgust] + StrandParametersDefault;
+        StrandReference[(int)UtilityServer.StrandType.fear].Lifetime =
+            StrandParameters[(int)UtilityServer.StrandType.fear] + StrandParametersDefault;
+        StrandReference[(int)UtilityServer.StrandType.happines].Lifetime =
+            StrandParameters[(int)UtilityServer.StrandType.happines] + StrandParametersDefault;
+        StrandReference[(int)UtilityServer.StrandType.sadness].Lifetime =
+            StrandParameters[(int)UtilityServer.StrandType.sadness] + StrandParametersDefault;
 
-        for (int i = 0; i < (int)WorldServer.StrandType.end; i++)
+        for (int i = 0; i < (int)UtilityServer.StrandType.end; i++)
         {
             double n = StrandReference[i].Lifetime;
             if (n >= 1 && n < 2)
@@ -174,27 +162,31 @@ public partial class Animal : Node2D
 
     private void OnPressed()
     {
+        if (InputServer.Instance.SpecificInput && InputServer.Instance.NodeToAcceptInput != this)
+            return;
+        GetViewport().SetInputAsHandled();
+        InputServer.Instance.RegisterInputReciever(this);
         if (IsPossesed)
         {
             IsPossesed = false;
-            WorldServer.Instance.ClearObject();
-            WorldServer.Instance.CallMethod("OmnicientControl", "SetCommandDetails", "");
+            SceneDependenciesServer.Instance.ClearObject();
+            UtilityServer.Instance.CallMethod("OmnicientControl", "SetCommandDetails", "");
             _OnPressedUnPossesed();
+            InputServer.Instance.ResetInputReciever();
             return;
         }
-        WorldServer.Instance.CallMethod("PossesionOptions", "ShowButtons");
-        IsPossesed = true;
-        WorldServer.Instance.SetObject(this, Commands);
+        UtilityServer.Instance.CallMethod("PossesionOptions", "ShowButtons");
     }
 
     public virtual void _OnPressedPossesed()
     {
-        GD.Print("djdj");
+        IsPossesed = true;
+        SceneDependenciesServer.Instance.SetObject(this, Commands);
     }
 
     public virtual void _OnPressedUnPossesed()
     {
-        WorldServer.Instance.SetSetting(WorldServer.SettingKeys.LockZoom, false);
+        SceneDependenciesServer.Instance.SetSetting(UtilityServer.SettingKeys.LockZoom, false);
     }
 
     public virtual void AnimalMovement() { }

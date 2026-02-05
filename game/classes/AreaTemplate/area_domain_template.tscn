@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d3bxfkglksgdo"]
+[gd_scene load_steps=20 format=4 uid="uid://d3bxfkglksgdo"]
 
 [ext_resource type="Script" uid="uid://bpu2eluls76h4" path="res://game/classes/AreaTemplate/AreaDomainTemplate.cs" id="1_binwq"]
 [ext_resource type="Texture2D" uid="uid://c4enmah5n2ctm" path="res://game/assets/BaseSet (3).png" id="2_r1agi"]
@@ -35,6 +35,130 @@ texture = ExtResource("2_r1agi")
 
 [sub_resource type="TileSet" id="TileSet_yc3hh"]
 sources/0 = SubResource("TileSetAtlasSource_r1agi")
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_46kri"]
+tile_data = PackedInt32Array(0, 458752, 20, 1, 458752, 20, 2, 458752, 20, 3, 458752, 20, 4, 458752, 20, 5, 458752, 20, 6, 458752, 20, 7, 458752, 20, 8, 458752, 20, 9, 458752, 20, 10, 458752, 20, 11, 458752, 20, 12, 458752, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_3d5ho"]
+tile_data = PackedInt32Array(0, 393216, 19, 65536, 393216, 20, 65537, 458752, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_1313l"]
+tile_data = PackedInt32Array(65536, 458752, 20, 1, 524288, 19, 65537, 524288, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_p1jm6"]
+tile_data = PackedInt32Array(0, 393216, 19, 65536, 393216, 20, 65537, 458752, 20, 2, 524288, 19, 65538, 524288, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_0lnd8"]
+tile_data = PackedInt32Array(0, 393216, 19, 65536, 393216, 19, 131072, 393216, 20, 131073, 458752, 20, 131074, 458752, 19, 196610, 393216, 20, 196611, 458752, 20, 196612, 458752, 19, 262148, 393216, 20, 262149, 458752, 20, 262150, 458752, 20, 262151, 458752, 20, 262152, 458752, 20, 262153, 458752, 20, 262154, 458752, 20, 196619, 458752, 19, 262155, 524288, 20, 196620, 458752, 20, 196621, 458752, 20, 196622, 458752, 19, 262158, 393216, 20, 262159, 458752, 20, 196624, 458752, 19, 262160, 524288, 20, 65553, 458752, 19, 131089, 524288, 19, 196625, 524288, 20, 65554, 458752, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_iea3e"]
+tile_data = PackedInt32Array(0, 393216, 19, 65536, 393216, 20, 65537, 458752, 20, 65538, 458752, 19, 131074, 393216, 20, 131075, 458752, 20, 131076, 458752, 20, 131077, 458752, 20, 131078, 458752, 20, 131079, 458752, 20, 131080, 458752, 20, 131081, 458752, 20, 131082, 458752, 20, 131083, 458752, 20, 131084, 458752, 19, 196620, 393216, 19, 262156, 393216, 20, 262157, 458752, 20, 262158, 458752, 20, 262159, 458752, 20)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_ro2ud"]
+tile_data = PackedInt32Array(0, 393216, 20, 1, 458752, 19, 65537, 393216, 20, 65538, 458752, 20, 65539, 458752, 20, 65540, 458752, 20, 65541, 458752, 20, 65542, 458752, 20, 65543, 458752, 20, 65544, 458752, 19, 131080, 393216, 20, 65545, 458752, 19, 131081, 524288, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3d5ho"]
+texture = ExtResource("2_r1agi")
+6:18/0 = 0
+6:18/0/terrain_set = 0
+6:18/0/terrains_peering_bit/bottom_right_corner = 0
+6:19/0 = 0
+6:19/0/terrain_set = 0
+6:19/0/terrains_peering_bit/right_side = 0
+6:19/0/terrains_peering_bit/bottom_right_corner = 0
+6:19/0/terrains_peering_bit/top_right_corner = 0
+6:20/0 = 0
+6:20/0/terrain_set = 0
+6:20/0/terrains_peering_bit/top_right_corner = 0
+7:20/0 = 0
+7:20/0/terrain_set = 0
+7:20/0/terrains_peering_bit/top_left_corner = 0
+7:20/0/terrains_peering_bit/top_side = 0
+7:20/0/terrains_peering_bit/top_right_corner = 0
+8:20/0 = 0
+8:20/0/terrain_set = 0
+8:20/0/terrains_peering_bit/top_left_corner = 0
+8:19/0 = 0
+8:19/0/terrain_set = 0
+8:19/0/terrains_peering_bit/bottom_left_corner = 0
+8:19/0/terrains_peering_bit/left_side = 0
+8:19/0/terrains_peering_bit/top_left_corner = 0
+8:18/0 = 0
+8:18/0/terrain_set = 0
+8:18/0/terrains_peering_bit/bottom_left_corner = 0
+7:18/0 = 0
+7:18/0/terrain_set = 0
+7:18/0/terrains_peering_bit/bottom_right_corner = 0
+7:18/0/terrains_peering_bit/bottom_side = 0
+7:18/0/terrains_peering_bit/bottom_left_corner = 0
+7:19/0 = 0
+7:19/0/terrain_set = 0
+7:19/0/terrain = 0
+7:19/0/terrains_peering_bit/right_side = 0
+7:19/0/terrains_peering_bit/bottom_right_corner = 0
+7:19/0/terrains_peering_bit/bottom_side = 0
+7:19/0/terrains_peering_bit/bottom_left_corner = 0
+7:19/0/terrains_peering_bit/left_side = 0
+7:19/0/terrains_peering_bit/top_left_corner = 0
+7:19/0/terrains_peering_bit/top_side = 0
+7:19/0/terrains_peering_bit/top_right_corner = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+14:18/0 = 0
+13:18/0 = 0
+6:17/0 = 0
+6:16/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+8:16/0 = 0
+8:17/0 = 0
+7:17/0 = 0
+7:16/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+14:16/0 = 0
+14:17/0 = 0
+13:17/0 = 0
+12:19/0 = 0
+11:19/0 = 0
+10:19/0 = 0
+9:19/0 = 0
+9:18/0 = 0
+9:17/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+12:17/0 = 0
+11:17/0 = 0
+11:18/0 = 0
+10:18/0 = 0
+10:17/0 = 0
+12:18/0 = 0
+13:16/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1313l"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_3d5ho")
+pattern_0 = SubResource("TileMapPattern_46kri")
+pattern_1 = SubResource("TileMapPattern_3d5ho")
+pattern_2 = SubResource("TileMapPattern_1313l")
+pattern_3 = SubResource("TileMapPattern_p1jm6")
+pattern_4 = SubResource("TileMapPattern_0lnd8")
+pattern_5 = SubResource("TileMapPattern_iea3e")
+pattern_6 = SubResource("TileMapPattern_ro2ud")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46kri"]
 texture = ExtResource("2_r1agi")
@@ -145,130 +269,6 @@ texture = ExtResource("2_r1agi")
 [sub_resource type="TileSet" id="TileSet_46kri"]
 sources/0 = SubResource("TileSetAtlasSource_edptq")
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_edptq"]
-tile_data = PackedInt32Array(0, 393216, 20, 1, 458752, 19, 65537, 393216, 20, 2, 458752, 19, 65538, 458752, 20, 3, 458752, 19, 65539, 458752, 20, 4, 458752, 19, 65540, 458752, 20, 5, 458752, 19, 65541, 458752, 20, 6, 458752, 19, 65542, 458752, 20, 7, 458752, 19, 65543, 458752, 20, 8, 458752, 19, 65544, 458752, 19, 131080, 393216, 20, 9, 458752, 19, 65545, 458752, 19, 131081, 524288, 20)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3d5ho"]
-texture = ExtResource("2_r1agi")
-6:18/0 = 0
-6:18/0/terrain_set = 0
-6:18/0/terrain = 0
-6:18/0/terrains_peering_bit/right_side = 0
-6:18/0/terrains_peering_bit/bottom_right_corner = 0
-6:18/0/terrains_peering_bit/bottom_side = 0
-6:19/0 = 0
-6:19/0/terrain_set = 0
-6:19/0/terrain = 0
-6:19/0/terrains_peering_bit/right_side = 0
-6:19/0/terrains_peering_bit/bottom_right_corner = 0
-6:19/0/terrains_peering_bit/bottom_side = 0
-6:19/0/terrains_peering_bit/top_side = 0
-6:19/0/terrains_peering_bit/top_right_corner = 0
-6:20/0 = 0
-6:20/0/terrain_set = 0
-6:20/0/terrain = 0
-6:20/0/terrains_peering_bit/right_side = 0
-6:20/0/terrains_peering_bit/top_side = 0
-6:20/0/terrains_peering_bit/top_right_corner = 0
-7:20/0 = 0
-7:20/0/terrain_set = 0
-7:20/0/terrain = 0
-7:20/0/terrains_peering_bit/right_side = 0
-7:20/0/terrains_peering_bit/left_side = 0
-7:20/0/terrains_peering_bit/top_left_corner = 0
-7:20/0/terrains_peering_bit/top_side = 0
-7:20/0/terrains_peering_bit/top_right_corner = 0
-8:20/0 = 0
-8:20/0/terrain_set = 0
-8:20/0/terrain = 0
-8:20/0/terrains_peering_bit/left_side = 0
-8:20/0/terrains_peering_bit/top_left_corner = 0
-8:20/0/terrains_peering_bit/top_side = 0
-8:19/0 = 0
-8:19/0/terrain_set = 0
-8:19/0/terrain = 0
-8:19/0/terrains_peering_bit/bottom_side = 0
-8:19/0/terrains_peering_bit/bottom_left_corner = 0
-8:19/0/terrains_peering_bit/left_side = 0
-8:19/0/terrains_peering_bit/top_left_corner = 0
-8:19/0/terrains_peering_bit/top_side = 0
-8:18/0 = 0
-8:18/0/terrain_set = 0
-8:18/0/terrain = 0
-8:18/0/terrains_peering_bit/bottom_side = 0
-8:18/0/terrains_peering_bit/bottom_left_corner = 0
-8:18/0/terrains_peering_bit/left_side = 0
-7:18/0 = 0
-7:18/0/terrain_set = 0
-7:18/0/terrain = 0
-7:18/0/terrains_peering_bit/right_side = 0
-7:18/0/terrains_peering_bit/bottom_right_corner = 0
-7:18/0/terrains_peering_bit/bottom_side = 0
-7:18/0/terrains_peering_bit/bottom_left_corner = 0
-7:18/0/terrains_peering_bit/left_side = 0
-7:19/0 = 0
-7:19/0/terrain_set = 0
-7:19/0/terrain = 0
-7:19/0/terrains_peering_bit/right_side = 0
-7:19/0/terrains_peering_bit/bottom_right_corner = 0
-7:19/0/terrains_peering_bit/bottom_side = 0
-7:19/0/terrains_peering_bit/bottom_left_corner = 0
-7:19/0/terrains_peering_bit/left_side = 0
-7:19/0/terrains_peering_bit/top_left_corner = 0
-7:19/0/terrains_peering_bit/top_side = 0
-7:19/0/terrains_peering_bit/top_right_corner = 0
-9:20/0 = 0
-10:20/0 = 0
-11:20/0 = 0
-12:20/0 = 0
-13:20/0 = 0
-13:19/0 = 0
-14:19/0 = 0
-14:18/0 = 0
-13:18/0 = 0
-6:17/0 = 0
-6:16/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-8:16/0 = 0
-8:17/0 = 0
-7:17/0 = 0
-7:16/0 = 0
-9:15/0 = 0
-10:15/0 = 0
-11:15/0 = 0
-12:15/0 = 0
-13:15/0 = 0
-14:15/0 = 0
-14:16/0 = 0
-14:17/0 = 0
-13:17/0 = 0
-12:19/0 = 0
-11:19/0 = 0
-10:19/0 = 0
-9:19/0 = 0
-9:18/0 = 0
-9:17/0 = 0
-9:16/0 = 0
-10:16/0 = 0
-11:16/0 = 0
-12:16/0 = 0
-12:17/0 = 0
-11:17/0 = 0
-11:18/0 = 0
-10:18/0 = 0
-10:17/0 = 0
-12:18/0 = 0
-13:16/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_1313l"]
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_3d5ho")
-pattern_0 = SubResource("TileMapPattern_edptq")
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_edptq"]
 seed = 340
 fractal_type = 3
@@ -284,6 +284,11 @@ script = ExtResource("1_binwq")
 texture_filter = 1
 tile_set = SubResource("TileSet_yc3hh")
 
+[node name="LandForm" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAEAA4AAAAHABQAAAAEABMAAAAGABMAAAAEABQAAAAGABQAAAAFAAcAAAAGABQAAAAFAA4AAAAHABQAAAAFABQAAAAHABQAAAAGAAcAAAAHABMAAAAGAAgAAAAGABQAAAAGAA4AAAAHABQAAAAHAAgAAAAHABQAAAAHAA4AAAAHABQAAAAHABQAAAAHABQAAAAIAAgAAAAHABQAAAAIAA4AAAAHABQAAAAIABMAAAAIABMAAAAIABQAAAAIABQAAAAJAAgAAAAHABQAAAAJAA4AAAAHABQAAAAKAAgAAAAHABQAAAAKAA4AAAAHABQAAAALAAgAAAAHABQAAAALAA4AAAAHABQAAAALABMAAAAGABMAAAALABQAAAAGABQAAAAMAAgAAAAHABQAAAAMAA4AAAAHABQAAAAMABQAAAAHABQAAAANAAgAAAAHABMAAAANAAkAAAAGABQAAAANAA4AAAAHABQAAAANABMAAAAIABMAAAANABQAAAAIABQAAAAOAAgAAAAHABMAAAAOAAkAAAAIABQAAAAOAA4AAAAHABQAAAAPAA4AAAAHABQAAAAQAA4AAAAHABQAAAAUAAcAAAAGABMAAAAUAAgAAAAGABQAAAAVAAgAAAAHABQAAAAVAA8AAAAGABMAAAAVABAAAAAGABMAAAAVABEAAAAGABQAAAAWAAgAAAAHABMAAAAWAAkAAAAGABQAAAAWABEAAAAHABQAAAAXAAkAAAAHABQAAAAXABEAAAAHABMAAAAXABIAAAAGABQAAAAYAAkAAAAHABQAAAAYABIAAAAHABQAAAAZAAkAAAAHABQAAAAZABIAAAAHABMAAAAZABMAAAAGABQAAAAaAAkAAAAHABQAAAAaABMAAAAHABQAAAAbAAkAAAAHABQAAAAbABMAAAAHABQAAAAcAAkAAAAHABQAAAAcABMAAAAHABQAAAAdAAkAAAAHABQAAAAdABMAAAAHABQAAAAeAAkAAAAHABQAAAAeABMAAAAHABQAAAAfAAkAAAAHABQAAAAfABMAAAAHABQAAAAgAAkAAAAHABMAAAAgAAoAAAAGABMAAAAgAAsAAAAGABQAAAAgABIAAAAHABMAAAAgABMAAAAIABQAAAAhAAsAAAAHABQAAAAhABIAAAAHABQAAAAiAAsAAAAHABQAAAAiABIAAAAHABQAAAAjAAsAAAAHABQAAAAjABIAAAAHABMAAAAjABMAAAAGABQAAAAkABMAAAAHABQAAAAlABIAAAAHABMAAAAlABMAAAAIABQAAAAmABAAAAAHABMAAAAmABEAAAAIABMAAAAmABIAAAAIABQAAAAnABAAAAAHABQAAAA=")
+tile_set = SubResource("TileSet_1313l")
+
 [node name="Rocks" type="TileMapLayer" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_3d5ho")
@@ -291,11 +296,6 @@ tile_set = SubResource("TileSet_3d5ho")
 [node name="Trees" type="TileMapLayer" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_46kri")
-
-[node name="LandForm" type="TileMapLayer" parent="."]
-texture_filter = 1
-tile_map_data = PackedByteArray("AAAFAAcAAAAGABQAAAAGAAgAAAAGABQAAAAHAAgAAAAHABQAAAAIAAgAAAAHABQAAAAJAAgAAAAHABQAAAAKAAgAAAAHABQAAAALAAgAAAAHABQAAAAMAAgAAAAHABQAAAAOAAkAAAAIABQAAAANAAkAAAAGABQAAAANAAgAAAAHABMAAAAGAAcAAAAHABMAAAAHAAcAAAAHABMAAAAIAAcAAAAHABMAAAAJAAcAAAAHABMAAAAKAAcAAAAHABMAAAALAAcAAAAHABMAAAAMAAcAAAAHABMAAAANAAcAAAAHABMAAAAOAAgAAAAHABMAAAAOAAcAAAAHABMAAAA=")
-tile_set = SubResource("TileSet_1313l")
 
 [node name="Elevation" type="TextureRect" parent="."]
 visible = false

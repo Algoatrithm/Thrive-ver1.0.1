@@ -963,6 +963,5 @@ navigation_polygon = SubResource("NavigationPolygon_mo5yn")
 [node name="Animals" type="Node2D" parent="."]
 
 [node name="Eagle" parent="Animals" instance=ExtResource("5_onreb")]
-position = Vector2(345, 384)
 
 [node name="Objects" type="Node2D" parent="."]

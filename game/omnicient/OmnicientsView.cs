@@ -19,7 +19,7 @@ public partial class OmnicientsView : Camera2D
 
     private void CameraPan(InputEvent @event)
     {
-        if ((bool)WorldServer.Instance.GetSetting(WorldServer.SettingKeys.LockPan))
+        if ((bool)SceneDependenciesServer.Instance.GetSetting(UtilityServer.SettingKeys.LockPan))
             return;
         if (Input.IsActionPressed("Click") && @event is InputEventMouseMotion mouseMotion)
             GlobalPosition += mouseMotion.Relative * (Sensitivity * -1);
@@ -27,7 +27,7 @@ public partial class OmnicientsView : Camera2D
 
     private void CameraZoom(InputEvent @event)
     {
-        if ((bool)WorldServer.Instance.GetSetting(WorldServer.SettingKeys.LockZoom))
+        if ((bool)SceneDependenciesServer.Instance.GetSetting(UtilityServer.SettingKeys.LockZoom))
             return;
         // Zoom in
         if (Input.IsActionPressed("up_Zoom") && Zoom < new Vector2(30, 30))

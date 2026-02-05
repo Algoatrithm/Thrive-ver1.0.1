@@ -68,6 +68,7 @@ _data = {
 }
 
 [node name="Eagle" type="Node2D"]
+position = Vector2(345, 384)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_y6u08")
 MovementSpeed = 10.0
@@ -105,3 +106,4 @@ trail_lifetime = 3.1
 trail_sections = 16
 trail_section_subdivisions = 16
 process_material = ExtResource("4_bhl3q")
+metadata/_edit_lock_ = true

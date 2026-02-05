@@ -27,12 +27,6 @@ public partial class AreaDomainTemplate : Node2D
         //new Vector2I(2, 4),
         //new Vector2I(4, 4),
     };
-    Godot.Collections.Array<Vector2I> LandFormVariety = new Godot.Collections.Array<Vector2I>
-    {
-        new Vector2I(0, 4),
-        new Vector2I(2, 4),
-        new Vector2I(4, 4),
-    };
     Godot.Collections.Array<Vector2I> TreeVariety = new Godot.Collections.Array<Vector2I>
     {
         new Vector2I(21, 18),
@@ -99,6 +93,7 @@ public partial class AreaDomainTemplate : Node2D
         MapLand = (TileMapLayer)FindChild("Land");
         MapTree = (TileMapLayer)FindChild("Trees");
         MapRock = (TileMapLayer)FindChild("Rocks");
+        MapLandForm = (TileMapLayer)FindChild("LandForm");
 
         Vector2I AtlasPos = new Vector2I(0, 0);
         int SourceId = 0;
@@ -134,10 +129,10 @@ public partial class AreaDomainTemplate : Node2D
             for (int y = 0; y < LandCell.Y; y++)
             {
                 float point = noise.GetNoise2D(x, y);
+                Vector2I NewPos = new Vector2I(x, y);
                 // Tree Generation
                 if (point > 0.1f && point < 0.4f)
                 {
-                    Vector2I NewPos = new Vector2I(x, y);
                     MapTree.SetCell(
                         NewPos,
                         SourceId,
@@ -145,13 +140,19 @@ public partial class AreaDomainTemplate : Node2D
                     );
                 }
                 // Rock/Stone Generation
-                else if (point >= 0.4f && point < 1.0f)
+                else if (point >= 0.4f && point < 0.7f)
                 {
-                    Vector2I NewPos = new Vector2I(x, y);
                     MapRock.SetCell(
                         NewPos,
                         SourceId,
                         RockVariety[GD.RandRange(0, RockVariety.Count - 1)]
+                    );
+                }
+                else if (point >= 0.7f && point < 1.0f)
+                {
+                    MapLandForm.SetPattern(
+                        NewPos,
+                        MapLandForm.TileSet.GetPattern(GD.RandRange(0, 6))
                     );
                 }
             }

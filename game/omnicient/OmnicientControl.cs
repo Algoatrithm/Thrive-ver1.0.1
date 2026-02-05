@@ -24,12 +24,12 @@ public partial class OmnicientControl : CanvasLayer
 
     public override void _Ready()
     {
-        WorldServer.Instance.ObjectPassed += OnObjectPassed;
-        WorldServer.Instance.ClearObjectPassed += OnClearObjectPassed;
+        SceneDependenciesServer.Instance.ObjectPassed += OnObjectPassed;
+        SceneDependenciesServer.Instance.ClearObjectPassed += OnClearObjectPassed;
         Camera = GetNode<Camera2D>("OmnicientsView");
         ControlButtons = (HBoxContainer)FindChild("ControlButtons");
 
-        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
+        UtilityServer.Instance.CallMethod("PossesionOptions", "HideButtons");
 
         Camera.LimitLeft = 0;
         Camera.LimitTop = 0;
@@ -62,6 +62,7 @@ public partial class OmnicientControl : CanvasLayer
     {
         if (FindChild("ControlButtons").GetChildCount() < 1)
             return;
+        InputServer.Instance.ResetInputReciever();
         // Hide the target
         TargetToOperate.Call("HideButtons");
         // Removes the Cancel button
@@ -93,12 +94,12 @@ public partial class OmnicientControl : CanvasLayer
     {
         ClickedObject.Call("_OnPressedPossesed");
         LockedIn = true;
-        WorldServer.Instance.CallMethod(
+        UtilityServer.Instance.CallMethod(
             "OmnicientControl",
             "SetCommandDetails",
             "Select any available command to control or interact with the creature."
         );
-        WorldServer.Instance.CallMethod("PossesionOptions", "HideButtons");
+        UtilityServer.Instance.CallMethod("PossesionOptions", "HideButtons");
         for (int i = 0; i < Callables.Count; i++)
         {
             ControlButtons.Call("AddCommand", Callables[i].Method, Callables[i]);
@@ -116,7 +117,7 @@ public partial class OmnicientControl : CanvasLayer
         }
     }
 
-    /* Use WorldServer.Instance.CallMethod(
+    /* Use UtilityServer.Instance.CallMethod(
               "OmnicientControl",
               "SetCommandDetails",
               "Text here"
@@ -126,7 +127,7 @@ public partial class OmnicientControl : CanvasLayer
         FindChild("CommandDetails").Set("text", text);
     }
 
-    /* Use WorldServer.Instance.CallMethod(
+    /* Use UtilityServer.Instance.CallMethod(
               "OmnicientControl",
               "SetWarning",
               "Text here"

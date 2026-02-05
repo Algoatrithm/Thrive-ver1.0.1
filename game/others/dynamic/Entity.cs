@@ -18,7 +18,7 @@ public partial class Entity : Node2D
     private AnimatedSprite2D Appearance;
     private Label Indicator;
     private float _movementDelta;
-    private WorldServer.OBJECT LookingFor;
+    private UtilityServer.OBJECT LookingFor;
 
     private enum STATE_MACHINE
     {
@@ -42,7 +42,11 @@ public partial class Entity : Node2D
         Movement.TargetPosition = where;
     }
 
-    public void Procure(bool foundAlready, WorldServer.OBJECT what, WorldServer.STORAGE putWhere)
+    public void Procure(
+        bool foundAlready,
+        UtilityServer.OBJECT what,
+        UtilityServer.STORAGE putWhere
+    )
     {
         // What object
         SetLookingFor(what);
@@ -66,7 +70,7 @@ public partial class Entity : Node2D
         MovementSpeed = new_speed;
     }
 
-    private void SetLookingFor(WorldServer.OBJECT what)
+    private void SetLookingFor(UtilityServer.OBJECT what)
     {
         LookingFor = what;
     }
