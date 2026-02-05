@@ -65,8 +65,16 @@ public partial class UtilityServer : Node
         GetTree()
             .Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main)
             .FindChild("World")
-            .RemoveChild(GetTree().Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main).FindChild("World").GetChild(0));
-        GetTree().Root.GetChild(1).FindChild("World").AddChild(areaDomainToSwitchTo);
+            .RemoveChild(
+                GetTree()
+                    .Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main)
+                    .FindChild("World")
+                    .GetChild(0)
+            );
+        GetTree()
+            .Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main)
+            .FindChild("World")
+            .AddChild(areaDomainToSwitchTo);
         HideLoadingScreen();
     }
 
@@ -74,7 +82,9 @@ public partial class UtilityServer : Node
     {
         try
         {
-            var nodeTarget = GetTree().Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main).FindChild(nodeName);
+            var nodeTarget = GetTree()
+                .Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main)
+                .FindChild(nodeName);
             nodeTarget.Call(methodName);
         }
         catch
@@ -89,7 +99,9 @@ public partial class UtilityServer : Node
     {
         try
         {
-            var nodeTarget = GetTree().Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main).FindChild(nodeName);
+            var nodeTarget = GetTree()
+                .Root.GetChild((int)UtilityServer.RootChildNodesOrder.Main)
+                .FindChild(nodeName);
             nodeTarget.Call(methodName, arg1);
         }
         catch
