@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://dq2y6wocjibie"]
 
-[ext_resource type="Script" uid="uid://br5l8rk21on8c" path="res://game/Regions/Region0/Region0.cs" id="1_wyqqn"]
+[ext_resource type="Script" uid="uid://br5l8rk21on8c" path="res://game/regions/Region0/Region0.cs" id="1_wyqqn"]
 [ext_resource type="Texture2D" uid="uid://icxl01xmqe77" path="res://game/assets/Map.png" id="2_w7cjw"]
 [ext_resource type="Texture2D" uid="uid://c4enmah5n2ctm" path="res://game/assets/BaseSet (3).png" id="3_iros0"]
 [ext_resource type="PackedScene" uid="uid://c440yh6cqr3x3" path="res://game/classes/AreaTemplate/area.tscn" id="4_s544g"]

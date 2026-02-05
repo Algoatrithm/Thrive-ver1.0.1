@@ -1,15 +1,11 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1770286262
+::res://::1770286498
 export_presets.cfg::TextFile/TextFile::-1::1769062737::0::1::::<><><>0<>0<><>::
-GraphicsServer.cs::CSharpScript::223484683657152475::1770283507::0::1::::<>Node<><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::7452746770560278504::1769062737::1769063004::1::::<><><>0<>0<>4407d148f1bad1f215598d4f5be73044<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-InputServer.cs::CSharpScript::2502535950349960662::1770284126::0::1::::<>Node<><>0<>0<><>::
 README.md::TextFile/TextFile::-1::1770127002::0::1::::<><><>0<>0<><>::
-SceneDependenciesServer.cs::CSharpScript::5700426619569243982::1770283784::0::1::::<>Node<><>0<>0<><>::
-UtilityServer.cs::CSharpScript::737332645983811719::1770286201::0::1::::<>Node<><>0<>0<><>::
-::res://game/::1770286226
-Main.cs::CSharpScript::3226261447872560243::1770285929::0::1::::<>Node2D<><>0<>0<><>::
-main.tscn::PackedScene::5389198406920917129::1770286226::0::1::::<><><>0<>0<><>::uid://bl73b4hj5a1f8::::res://game/Main.cs<>uid://dq2y6wocjibie::::res://game/Regions/Region0/region_0.tscn<>uid://bmk6vhlj3qqd2::::res://game/omnicient/OmnicientControl.cs<>uid://c6cpf3jfmoxh8::::res://game/omnicient/OmnicientsView.cs<>uid://naygnp3q4gi5::::res://game/omnicient/possesion_buttons/PossesionOptions.cs<>uid://ccnk6c1v5fkit::::res://game/omnicient/possesion_type/FullPossesion.cs<>uid://4a8dhfq3ep2s::::res://game/omnicient/possesion_type/PartialPossesion.cs<>uid://ciev1an4y2858::::res://game/omnicient/possesion_type/LightPossesion.cs<>uid://c5kf0h3yvl5ws::::res://game/omnicient/control_buttons/ControlButtons.cs<>uid://bn5571s6oroiv::::res://game/assets/Dark.png
+::res://game/::1770286485
+Main.cs::CSharpScript/CSharpScript::3226261447872560243::1770285929::0::1::::<>Node2D<><>0<>0<><>::
+main.tscn::PackedScene::5389198406920917129::1770286485::0::1::::<><><>0<>0<><>::uid://bl73b4hj5a1f8::::res://game/Main.cs<>uid://dq2y6wocjibie::::res://game/regions/Region0/region_0.tscn<>uid://bmk6vhlj3qqd2::::res://game/omnicient/OmnicientControl.cs<>uid://c6cpf3jfmoxh8::::res://game/omnicient/OmnicientsView.cs<>uid://naygnp3q4gi5::::res://game/omnicient/possesion_buttons/PossesionOptions.cs<>uid://ccnk6c1v5fkit::::res://game/omnicient/possesion_type/FullPossesion.cs<>uid://4a8dhfq3ep2s::::res://game/omnicient/possesion_type/PartialPossesion.cs<>uid://ciev1an4y2858::::res://game/omnicient/possesion_type/LightPossesion.cs<>uid://c5kf0h3yvl5ws::::res://game/omnicient/control_buttons/ControlButtons.cs<>uid://bn5571s6oroiv::::res://game/assets/Dark.png
 ::res://game/assets/::1770176056
 BaseSet (3).png::CompressedTexture2D/CompressedTexture2D::6817386106533333314::1769694738::1769694739::1::::<><><>0<>0<>9185d0753ffa7085d0ca32de61f3266c<>res://.godot/imported/BaseSet (3).png-b8de67f233aea5d24204c6cd253be6da.ctex::
 Dark.png::CompressedTexture2D/CompressedTexture2D::3362687033638740645::1769526182::1770175839::1::::<><><>0<>0<>5c10c4ab95516c1ffb5e5e6a8efaa08f<>res://.godot/imported/Dark.png-5ab0f1045c3d6c4ecca3450be2b2e240.ctex::
@@ -18,54 +14,59 @@ single_smokelete.png::CompressedTexture2D/CompressedTexture2D::36174084867869167
 smokelet.png::CompressedTexture2D/CompressedTexture2D::5423087303681612035::1769496582::1770175839::1::::<><><>0<>0<>03311362ab72d79e0944f8a6a906df88<>res://.godot/imported/smokelet.png-a2b8d1ab55a1699460f1a843fc13ebb3.ctex::
 Spot.png::CompressedTexture2D/CompressedTexture2D::6497633116356287874::1769442469::1770175839::1::::<><><>0<>0<>ae83a351d70d6f897a4aa80924337e1e<>res://.godot/imported/Spot.png-c318f068569de33a06bb94429254cd96.ctex::
 ::res://game/classes/::1770175806
-Animal.cs::CSharpScript::7724233947959292728::1770284140::0::1::::<>Node2D<><>0<>0<><>::
+Animal.cs::CSharpScript/CSharpScript::7724233947959292728::1770284140::0::1::::<>Node2D<><>0<>0<><>::
 ::res://game/classes/AreaTemplate/::1770286226
-area.tscn::PackedScene::6869745987295095330::1770286226::0::1::::<><><>0<>0<><>::uid://c4enmah5n2ctm::::res://game/assets/BaseSet (3).png<>uid://yu1dl7o0k2b4::::res://game/classes/AreaTemplate/AreaTemplate.cs
-AreaDomainTemplate.cs::CSharpScript::3482188004503173895::1770213468::0::1::::<>Node2D<><>0<>0<><>::
-AreaTemplate.cs::CSharpScript::1727404429448137035::1770283979::0::1::::<>Node2D<><>0<>0<><>::
-area_domain_template.tscn::PackedScene::9128020005517618332::1770286226::0::1::::<><><>0<>0<><>::uid://bpu2eluls76h4::::res://game/classes/AreaTemplate/AreaDomainTemplate.cs<>uid://c4enmah5n2ctm::::res://game/assets/BaseSet (3).png
+area.tscn::PackedScene/PackedScene::6869745987295095330::1770286226::0::1::::<><><>0<>0<><>::uid://c4enmah5n2ctm::::res://game/assets/BaseSet (3).png<>uid://yu1dl7o0k2b4::::res://game/classes/AreaTemplate/AreaTemplate.cs
+AreaDomainTemplate.cs::CSharpScript/CSharpScript::3482188004503173895::1770213468::0::1::::<>Node2D<><>0<>0<><>::
+AreaTemplate.cs::CSharpScript/CSharpScript::1727404429448137035::1770283979::0::1::::<>Node2D<><>0<>0<><>::
+area_domain_template.tscn::PackedScene/PackedScene::9128020005517618332::1770286226::0::1::::<><><>0<>0<><>::uid://bpu2eluls76h4::::res://game/classes/AreaTemplate/AreaDomainTemplate.cs<>uid://c4enmah5n2ctm::::res://game/assets/BaseSet (3).png
 ::res://game/entities/::1770175875
 ::res://game/entities/eagle/::1770286226
-Eagle.cs::CSharpScript::2851593419442838627::1770283791::0::1::::<>Node2D<><>0<>0<><>::
-eagle.tscn::PackedScene::4462025131009199725::1770286226::0::1::::<><><>0<>0<><>::uid://bgvlleahqb4h0::::res://game/entities/eagle/Eagle.cs<>uid://degfwd6ll7k8o::::res://icon.svg<>uid://brskgo1727fff::::res://game/assets/single_smokelete.png<>uid://cnw7bahum32vu::::res://game/res/sadness.tres
+Eagle.cs::CSharpScript/CSharpScript::2851593419442838627::1770283791::0::1::::<>Node2D<><>0<>0<><>::
+eagle.tscn::PackedScene/PackedScene::4462025131009199725::1770286226::0::1::::<><><>0<>0<><>::uid://bgvlleahqb4h0::::res://game/entities/eagle/Eagle.cs<>uid://degfwd6ll7k8o::::res://icon.svg<>uid://brskgo1727fff::::res://game/assets/single_smokelete.png<>uid://cnw7bahum32vu::::res://game/res/sadness.tres
 ::res://game/omnicient/::1770213429
 omnicient.tscn::PackedScene/PackedScene::4166925184238645363::1770213429::0::1::::<><><>0<>0<><>::uid://degfwd6ll7k8o::::res://icon.svg
-OmnicientControl.cs::CSharpScript::3251250698441133921::1770285972::0::1::::<>CanvasLayer<><>0<>0<><>::
-OmnicientsView.cs::CSharpScript::6953745444335181051::1770285992::0::1::::<>Camera2D<><>0<>0<><>::
+OmnicientControl.cs::CSharpScript/CSharpScript::3251250698441133921::1770285972::0::1::::<>CanvasLayer<><>0<>0<><>::
+OmnicientsView.cs::CSharpScript/CSharpScript::6953745444335181051::1770285992::0::1::::<>Camera2D<><>0<>0<><>::
 ::res://game/omnicient/control_buttons/::1769062737
-ControlButtons.cs::CSharpScript::6899499095916181790::1769592518::0::1::::<>HBoxContainer<><>0<>0<><>::
+ControlButtons.cs::CSharpScript/CSharpScript::6899499095916181790::1769592518::0::1::::<>HBoxContainer<><>0<>0<><>::
 ::res://game/omnicient/possesion_buttons/::1769945671
-PossesionOptions.cs::CSharpScript::913923597154583918::1770286004::0::1::::<>VBoxContainer<><>0<>0<><>::
+PossesionOptions.cs::CSharpScript/CSharpScript::913923597154583918::1770286004::0::1::::<>VBoxContainer<><>0<>0<><>::
 ::res://game/omnicient/possesion_type/::1770175745
-FullPossesion.cs::CSharpScript::4940718641209817843::1769946007::0::1::::<>Button<><>0<>0<><>::
-LightPossesion.cs::CSharpScript::5343931136429580505::1769945160::0::1::::<>Button<><>0<>0<><>::
-PartialPossesion.cs::CSharpScript::2037485859797979908::1769945163::0::1::::<>Button<><>0<>0<><>::
+FullPossesion.cs::CSharpScript/CSharpScript::4940718641209817843::1769946007::0::1::::<>Button<><>0<>0<><>::
+LightPossesion.cs::CSharpScript/CSharpScript::5343931136429580505::1769945160::0::1::::<>Button<><>0<>0<><>::
+PartialPossesion.cs::CSharpScript/CSharpScript::2037485859797979908::1769945163::0::1::::<>Button<><>0<>0<><>::
 ::res://game/others/::1769062737
 ::res://game/others/dynamic/::1770213430
-Entity.cs::CSharpScript::3494967996245208115::1770285857::0::1::::<>Node2D<><>0<>0<><>::
+Entity.cs::CSharpScript/CSharpScript::3494967996245208115::1770285857::0::1::::<>Node2D<><>0<>0<><>::
 entity.tscn::PackedScene/PackedScene::3897930007153672872::1770213430::0::1::::<><><>0<>0<><>::uid://bp18u216ys0r4::::res://game/others/dynamic/Entity.cs<>uid://degfwd6ll7k8o::::res://icon.svg
 ::res://game/others/noise generation/::1769062737
 StoneGeneration.tres::NoiseTexture2D/NoiseTexture2D::3015300196153855191::1769062737::0::1::::<><><>0<>0<><>::
 ::res://game/others/reusable/::1769062737
-Indicator.cs::CSharpScript::7791829902555701404::1770286224::0::1::::<>Label<><>0<>0<><>::
+Indicator.cs::CSharpScript/CSharpScript::7791829902555701404::1770286224::0::1::::<>Label<><>0<>0<><>::
 ::res://game/popups/::1770175756
 cancel.tscn::PackedScene/PackedScene::783242077738461094::1769950637::0::1::::<><><>0<>0<><>::
-ScreenMessage.cs::CSharpScript::4595606987960922605::1769062737::0::1::::<>CanvasLayer<><>0<>0<><>::
+ScreenMessage.cs::CSharpScript/CSharpScript::4595606987960922605::1769062737::0::1::::<>CanvasLayer<><>0<>0<><>::
 screen_message.tscn::PackedScene/PackedScene::3223558915436568651::1770175618::0::1::::<><><>0<>0<><>::uid://b6qe8f4so8kc0::::res://game/popups/ScreenMessage.cs
-::res://game/Regions/::1770175790
-::res://game/Regions/Region0/::1770286249
-Region0.cs::CSharpScript::3642290085887801736::1770160499::0::1::::<>Node2D<><>0<>0<><>::
-region_0.gdshader::Shader::1149054592588474757::1770286249::0::1::::<><><>0<>0<><>::
-region_0.tscn::PackedScene::8339535493329060904::1770286227::0::1::::<><><>0<>0<><>::uid://br5l8rk21on8c::::res://game/Regions/Region0/Region0.cs<>uid://icxl01xmqe77::::res://game/assets/Map.png<>uid://c4enmah5n2ctm::::res://game/assets/BaseSet (3).png<>uid://c440yh6cqr3x3::::res://game/classes/AreaTemplate/area.tscn<>uid://b4to5wyd8sver::::res://game/entities/eagle/eagle.tscn
-::res://game/res/::1770279779
+::res://game/regions/::1770175790
+::res://game/regions/Region0/::1770286488
+Region0.cs::CSharpScript::3642290085887801736::1770160499::0::1::::<><><>0<>0<><>::
+region_0.gdshader::Shader::1149054592588474757::1770286488::0::1::::<><><>0<>0<><>::
+region_0.tscn::PackedScene::8339535493329060904::1770286484::0::1::::<><><>0<>0<><>::uid://br5l8rk21on8c::::res://game/regions/Region0/Region0.cs<>uid://icxl01xmqe77::::res://game/assets/Map.png<>uid://c4enmah5n2ctm::::res://game/assets/BaseSet (3).png<>uid://c440yh6cqr3x3::::res://game/classes/AreaTemplate/area.tscn<>uid://b4to5wyd8sver::::res://game/entities/eagle/eagle.tscn
+::res://game/res/::1770286483
 anger.tres::ParticleProcessMaterial/ParticleProcessMaterial::670896424205354234::1769524184::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
 command_button_group.tres::ButtonGroup/ButtonGroup::7786275532732489254::1769270688::0::1::::<><><>0<>0<><>::
 disgust.tres::ParticleProcessMaterial/ParticleProcessMaterial::7995573898716850875::1769524417::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
 fear.tres::ParticleProcessMaterial/ParticleProcessMaterial::1617473122234053430::1769524310::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
 happines.tres::ParticleProcessMaterial/ParticleProcessMaterial::2991353507061790663::1769524356::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
 human.tres::Resource/Resource::9054815759146047642::1769062737::0::1::::<><><>0<>0<><>::
-sadness.tres::ParticleProcessMaterial::5732657386571877802::1770279779::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
+sadness.tres::ParticleProcessMaterial::5732657386571877802::1770286483::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
 soldier.tres::Resource/Resource::2504652240594577617::1769062737::0::1::::<><><>0<>0<><>::uid://yoj83fllgx24::::res://game/cs/army/Soldier.cs
 vitality.tres::ParticleProcessMaterial/ParticleProcessMaterial::7368237363063035100::1769526143::0::1::::<><><>0<>0<><>::uid://dtaxakr7gxhrf::::res://game/res/energy_movement_pattern/calm.tres
 ::res://game/res/energy_movement_pattern/::1769507168
 calm.tres::Curve/Curve::8494247123993587899::1769507168::0::1::::<><><>0<>0<><>::
+::res://game/servers/::1770286477
+GraphicsServer.cs::CSharpScript/CSharpScript::223484683657152475::1770283507::0::1::::<><><>0<>0<><>::
+InputServer.cs::CSharpScript/CSharpScript::2502535950349960662::1770284126::0::1::::<><><>0<>0<><>::
+SceneDependenciesServer.cs::CSharpScript/CSharpScript::5700426619569243982::1770283784::0::1::::<><><>0<>0<><>::
+UtilityServer.cs::CSharpScript/CSharpScript::737332645983811719::1770286201::0::1::::<><><>0<>0<><>::
