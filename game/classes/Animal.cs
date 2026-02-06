@@ -332,6 +332,8 @@ public partial class Animal : Node2D
         if (_navigationAgent.IsNavigationFinished())
         {
             AnimalMovement();
+            if (Position != new Vector2(0.0f, 0.0f))
+                Position = new Vector2(0, 0);
             return;
         }
 
